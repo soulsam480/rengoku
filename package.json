@@ -11,6 +11,9 @@
     "serve": "vitepress serve content"
   },
   "devDependencies": {
-    "vitepress": "^0.13.2"
+    "gray-matter": "^4.0.3",
+    "sass": "^1.32.12",
+    "vitepress": "^0.13.2",
+    "vue": "^3.0.11"
   }
 }
