@@ -1,0 +1,3 @@
+[build]
+ publish = "content/.vitepress/dist"
+ command = "yarn build"
