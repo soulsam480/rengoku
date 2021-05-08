@@ -9,4 +9,5 @@ export type Post = {
   excerpt?: string;
   description?: string;
   banner?: string;
+  tags?: string[];
 };

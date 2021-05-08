@@ -4,6 +4,7 @@ import { computed } from 'vue';
 import Posts from './Posts.vue';
 import Post from './Post.vue';
 import Home from './Home.vue';
+import Tags from './Tags.vue';
 const route = useRoute();
 const routeIs = computed((): string => route.path);
 </script>
@@ -11,6 +12,9 @@ const routeIs = computed((): string => route.path);
   <div class="page">
     <Posts v-if="routeIs === '/blog/index.html'" />
     <Post v-else-if="routeIs.match(/\/blog\/(.*?).html/)" />
+    <div v-else-if="routeIs.match(/\/tags.html/)">
+      <ClientOnly><Tags /></ClientOnly>
+    </div>
     <Home v-else />
   </div>
 </template>

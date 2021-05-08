@@ -6,6 +6,7 @@ banner: /rengoku_banner.webp
 author: 
     name: Sambit Sahoo
     github: soulsam480
+tags: new,beginings,rengoku,wow
 ---
 
 # to install vitepress

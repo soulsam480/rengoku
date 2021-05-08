@@ -6,6 +6,7 @@ banner: /rengoku_banner.webp
 author: 
     name: Sambit Sahoo
     github: soulsam480
+tags: blog,theme
 ---
 # to install vitepress
 ## yoyo

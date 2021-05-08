@@ -17,6 +17,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
     <p class="date" v-if="pageData.frontmatter.date">
       {{ formatDate(pageData.frontmatter.date).string }}
     </p>
+
     <h1 class="title">{{ pageData.title }}</h1>
     <p class="author" v-if="pageData.frontmatter.author">
       <span v-if="pageData.frontmatter.author.github">
@@ -28,12 +29,23 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
       </span>
       <span v-else>@{{ pageData.frontmatter.author.name }}</span>
     </p>
+
     <img
       class="banner"
       v-if="pageData.frontmatter.banner"
       :src="pageData.frontmatter.banner"
       :alt="pageData.frontmatter.title"
     />
+    <p v-if="pageData.frontmatter.tags" class="tags">
+      Tags:
+      <span
+        class="tag"
+        v-for="tag in pageData.frontmatter.tags.split(',')"
+        :key="tag"
+      >
+        <a :href="`/tags.html#${tag}`">{{ tag }}</a>
+      </span>
+    </p>
     <div class="content"><Content /></div>
   </article>
   <footer class="post-switch">
@@ -84,6 +96,20 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+  }
+  .tags {
+    text-align: left;
+    padding-top: 15px;
+    .tag {
+      margin: 0 2px;
+      padding: 4px 8px;
+      border-radius: 25px;
+      border: 1px solid var(--rengoku-light);
+      background-color: mix(white, #f4d278, 80%);
+    }
+    @media (min-width: 768px) {
+      text-align: center;
+    }
   }
   .content {
     padding: 15px 0 30px 0;

@@ -16,6 +16,7 @@ exports.getPosts = function getPosts(asFeed = false) {
           date: formatDate(data.date),
           description: data.description,
           banner: data.banner,
+          tags: (data.tags && data.tags.split(',')) || [],
         };
         if (asFeed) {
           // only attach these when building the RSS feed to avoid bloating the
