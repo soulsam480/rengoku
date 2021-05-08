@@ -1,3 +1,6 @@
+import { HeadConfig, Route, SiteData } from 'vitepress';
+import { Ref, watchEffect } from 'vue';
+
 export function formatDate(
   date: any | string,
 ): { time: string; string: string } {
@@ -16,6 +19,6 @@ export function formatDate(
 }
 
 export function truncateDesc(text: string): string {
-  if (text.length < 100) return text;
-  return `${text.substring(0, 100)}...`;
+  if (text.length < 200) return text;
+  return `${text.substring(0, 200)}...`;
 }

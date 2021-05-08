@@ -1,0 +1,120 @@
+<script setup lang="ts">
+import { defineProps } from 'vue';
+import type { PropType } from 'vue';
+import { truncateDesc } from '../utils';
+import type { Post } from '../types';
+
+defineProps({
+  posts: {
+    type: Object as PropType<Post[]>,
+    required: true,
+  },
+});
+</script>
+<template>
+  <div class="posts">
+    <div v-if="$frontmatter.splitRow || $themeConfig.splitRow">
+      <div
+        class="post-card"
+        :class="{ row: post.banner }"
+        v-for="post in posts"
+        :key="post.href"
+      >
+        <div class="col-sm-6" v-if="post.banner">
+          <img class="banner" :src="post.banner" :alt="post.title" />
+        </div>
+        <div :class="{ 'col-sm-6': post.banner }">
+          <p class="title">{{ post.title }}</p>
+          <p v-if="post.description" class="desc">
+            {{ truncateDesc(post.description) }}
+          </p>
+          <p class="date">{{ post.date?.string }}</p>
+          <p class="read-more"><a :href="post.href">Read more</a></p>
+        </div>
+      </div>
+    </div>
+    <div v-else>
+      <div class="post-card" v-for="post in posts" :key="post.href">
+        <p class="title">{{ post.title }}</p>
+        <img
+          class="banner"
+          :src="post.banner"
+          v-if="post.banner"
+          :alt="post.title"
+        />
+
+        <p v-if="post.description" class="desc">
+          {{ truncateDesc(post.description) }}
+        </p>
+        <p class="date">{{ post.date?.string }}</p>
+        <p class="read-more"><a :href="post.href">Read more ></a></p>
+      </div>
+    </div>
+  </div>
+</template>
+<style lang="scss" scoped>
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  align-items: center;
+}
+.col-sm-6 {
+  padding: 0 1rem;
+  .banner {
+    @media (max-width: 768px) {
+      margin-bottom: 0 !important;
+      width: 90% !important;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .col-sm-6 {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%;
+    padding: 0;
+  }
+}
+.posts {
+  padding-top: 20px;
+  .post-card {
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--rengoku-alt);
+    }
+    .title {
+      font-size: 22px;
+      margin-bottom: 0;
+      @media (min-width: 768px) {
+        font-size: 30px;
+      }
+    }
+    .banner {
+      display: block;
+      margin: 2em auto;
+      width: 80%;
+      @media (max-width: 768px) {
+        margin: 1em auto;
+      }
+    }
+    .date {
+      color: var(--rengoku);
+    }
+    .desc {
+      color: mix(black, white, 50%);
+    }
+    .read-more {
+      text-align: right;
+      color: var(--rengoku-alt);
+      a {
+        padding-bottom: 1px;
+        text-decoration: underline solid;
+      }
+    }
+  }
+}
+</style>

@@ -8,12 +8,12 @@ module.exports = {
     anchor: false,
   },
   title: 'Rengoku',
-  description: 'Just playing around.',
+  description: 'A vitepress theme inspired by Flame Hashira Kyōjurō Rengoku.',
   customData: {
     posts: getPosts(),
   },
   themeConfig: {
-    feedOnHomepage: false,
+    splitRow: true,
     nav: [
       {
         link: '/',

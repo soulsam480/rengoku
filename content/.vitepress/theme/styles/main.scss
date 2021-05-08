@@ -39,9 +39,8 @@ h5,
 h6 {
   font-weight: normal;
 }
-blockquote {
+.quote {
   font-size: 1.4em;
-  // width: 80%;
   max-width: 55rem;
   margin: auto;
   font-style: italic;
@@ -56,29 +55,26 @@ blockquote {
     font-size: 1em;
     padding: 1.2em 30px 1.2em 50px;
   }
+  &:before {
+    font-family: Arial;
+    content: '\201C';
+    color: var(--rengoku-alt-light);
+    font-size: 4em;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+  }
+  &:after {
+    content: '';
+  }
+  & span {
+    display: block;
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 1em;
+  }
 }
 
-blockquote::before {
-  font-family: Arial;
-  content: '\201C';
-  color: var(--rengoku-alt-light);
-  font-size: 4em;
-  position: absolute;
-  left: 10px;
-  top: -10px;
-}
-
-blockquote::after {
-  content: '';
-}
-
-blockquote span {
-  display: block;
-  color: #333333;
-  font-style: normal;
-  font-weight: bold;
-  margin-top: 1em;
-}
 .license {
   position: fixed;
   bottom: 0;
@@ -93,4 +89,45 @@ blockquote span {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+}
+
+//extensions
+.table-of-contents {
+  ul > li {
+    a {
+      color: var(--rengoku);
+      text-decoration: underline;
+    }
+  }
+}
+
+ul,
+ol {
+  padding-left: 1.25em;
+}
+
+li > ul,
+li > ol {
+  margin: 0;
+}
+
+table {
+  display: block;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  overflow-x: auto;
+  tr {
+    border-top: 1px solid #dfe2e5;
+    &:nth-child(2n) {
+      background-color: #f6f8fa;
+    }
+    th {
+      background-color: var(--rengoku-light);
+    }
+    th,
+    td {
+      border: 1px solid #dfe2e5;
+      padding: 0.6em 1em;
+    }
+  }
 }

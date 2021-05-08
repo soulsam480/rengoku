@@ -10,6 +10,18 @@ export namespace DefaultTheme {
      * max array length 3
      */
     nav?: Nav[];
+    /**
+     * Split row in blog listing page into two column layout
+     *
+     * can also be enabled from  `content/blog/index.md` , e.g.
+     * ```yaml
+     * ---
+     * splitRow: true
+     * ---
+     * ```
+     * @default false
+     */
+    splitRow?: boolean;
   }
   export type Nav = {
     /**

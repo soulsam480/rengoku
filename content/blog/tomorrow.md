@@ -1,7 +1,8 @@
 ---
-title: Jai shree ram
+title: Shree Ram Jai Ram Jai Jai Ram
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque egestas scelerisque ex quis pharetra. Proin eu felis leo. Duis et eros elit. Quisque quis tincidunt felis, scelerisque imperdiet augue. Maecenas a magna eget orci condimentum pellentesque in ut dolor. Sed dolor nisl, posuere et velit eget, rutrum posuere est.
 date: 2021-05-09
-description: Shri ram
+banner: ../images/rengoku_banner.webp
 author: 
     name: Sambit Sahoo
     github: soulsam480

@@ -1,1 +1,4 @@
-# Blogs
+---
+# splitRow: true
+---
+# Blog articles

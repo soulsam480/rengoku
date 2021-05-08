@@ -5,7 +5,6 @@ import { formatDate } from '../utils';
 const pageData = usePageData();
 const route = useRoute();
 const posts = useSiteData().value.customData.posts;
-
 function findCurrentIndex(p: any) {
   return posts.findIndex((p) => p.href === route.path);
 }
@@ -27,7 +26,14 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
           >@{{ pageData.frontmatter.author.name }}</a
         >
       </span>
+      <span v-else>@{{ pageData.frontmatter.author.name }}</span>
     </p>
+    <img
+      class="banner"
+      v-if="pageData.frontmatter.banner"
+      :src="pageData.frontmatter.banner"
+      :alt="pageData.frontmatter.title"
+    />
     <div class="content"><Content /></div>
   </article>
   <footer class="post-switch">
@@ -46,7 +52,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
   </footer>
   <br />
   <footer class="rengoku-alt" style="text-align: center">
-    © Sambit Sahoo , MIT Licensed
+    © Sambit Sahoo {{ new Date().getFullYear() }} , MIT Licensed
   </footer>
 </template>
 <style lang="scss" scoped>
@@ -71,6 +77,13 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
     @media (min-width: 768px) {
       text-align: center;
     }
+  }
+  .banner {
+    padding-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
   }
   .content {
     padding: 15px 0 30px 0;

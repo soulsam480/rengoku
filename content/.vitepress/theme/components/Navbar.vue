@@ -64,6 +64,10 @@ const routes = computed(() => {
     justify-content: space-between;
     .nav-item {
       padding-left: 10px;
+      transition: color ease-in-out 0.1s;
+      &:hover {
+        color: var(--rengoku);
+      }
       @media (min-width: 768px) {
         padding-left: 20px;
       }

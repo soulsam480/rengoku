@@ -15,6 +15,7 @@ exports.getPosts = function getPosts(asFeed = false) {
           href: `/blog/${file.replace(/\.md$/, '.html')}`,
           date: formatDate(data.date),
           description: data.description,
+          banner: data.banner,
         };
         if (asFeed) {
           // only attach these when building the RSS feed to avoid bloating the
