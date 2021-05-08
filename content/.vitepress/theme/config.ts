@@ -12,7 +12,13 @@ export namespace DefaultTheme {
     nav?: Nav[];
   }
   export type Nav = {
+    /**
+     * link - url of page
+     */
     link?: string;
+    /**
+     * text - nav label
+     */
     text?: string;
   };
 }
