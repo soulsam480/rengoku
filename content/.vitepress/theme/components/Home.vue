@@ -19,15 +19,14 @@ const { posts } = siteData.value.customData as { posts: Post[] };
     </div>
     <div v-if="$themeConfig.feedOnHomepage">
       <hr v-if="$frontmatter.hero" class="feed-splitter" />
-
       <h1 v-if="$frontmatter.hero" class="home-feed-header">Blog articles</h1>
       <PostCards :posts="posts" />
     </div>
     <footer class="license rengoku-alt" v-if="!$themeConfig.feedOnHomepage">
-      © Sambit Sahoo {{ new Date().getFullYear() }} , MIT Licensed
+      © Sambit Sahoo , MIT Licensed
     </footer>
     <footer class="rengoku-alt" v-else style="text-align: center">
-      © Sambit Sahoo {{ new Date().getFullYear() }} , MIT Licensed
+      © Sambit Sahoo , MIT Licensed
     </footer>
   </div>
 </template>

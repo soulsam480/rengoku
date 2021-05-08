@@ -1,6 +1,6 @@
 ## Rengoku
 
-![Rengoku banner](./content/assets/rengoku_banner.webp)
+![Rengoku banner](./content/public/rengoku_banner.webp)
 
 A Vitepress blog theme inspired from `Flame` Hashira `Kyōjurō Rengoku`. 
 
@@ -18,7 +18,7 @@ yarn build // ssg
   - see [vitepress config](https://vitepress.vuejs.org/guide/markdown.html#links)
 
 ### Config 
-see `content/.vitepress/theme/config.ts`
+see [`content/.vitepress/theme/config.ts`](./content/.vitepress/theme/config.ts)
 
 ```ts
 export namespace DefaultTheme {
