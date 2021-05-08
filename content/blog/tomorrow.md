@@ -1,11 +1,11 @@
 ---
-title: Vitepress is the new upcoming static site generator
-date: 2021-05-07
+title: Jai shree ram
+date: 2021-05-09
+description: Shri ram
 author: 
     name: Sambit Sahoo
     github: soulsam480
 ---
-
 # to install vitepress
 ## yoyo
 ### yoyoyoy

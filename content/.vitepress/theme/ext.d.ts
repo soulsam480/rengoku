@@ -1,14 +1,3 @@
-import { PageData, SiteData } from 'vitepress';
-export interface Post {
-  title?: string;
-  href?: string;
-  date?: string;
-  excerpt?: string;
-}
-export interface CustomData {
-  posts?: Post[];
-}
-
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     $withBase: (param: string) => string;

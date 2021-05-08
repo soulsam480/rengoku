@@ -4,16 +4,28 @@ import { computed } from 'vue';
 const siteByRoute = useSiteDataByRoute();
 const route = useRoute();
 const isRouteActive = (path: string) => route.path === path;
-
+const homeColors = computed(() => {
+  if (
+    !route.path.match(/\/blog\/(.*?).html/) ||
+    route.path === '/blog/index.html'
+  )
+    return ['rengoku'];
+  return ['rengoku-alt'];
+});
 const routes = computed(() => {
   const { themeConfig } = siteByRoute.value;
+  if (themeConfig.nav.length > 3) {
+    console.error('Maximum 3 nav bar elements are allowed!');
+    return themeConfig.nav.slice(0, 3);
+  }
+
   return themeConfig.nav;
 });
 </script>
 <template>
   <header class="nav">
-    <div class="brand">
-      {{ $site.title }}
+    <div class="brand" :class="homeColors">
+      <a href="/">{{ $site.title }}</a>
     </div>
     <div class="nav-items">
       <div class="nav-item" v-for="nav in routes" :key="nav.link">
@@ -35,6 +47,7 @@ const routes = computed(() => {
   justify-content: space-between;
   align-items: center;
   padding: 0.7rem 1.5rem 0.7rem 1.5rem;
+  background-color: var(--rengoku-bg);
   height: 30px;
   max-width: 55rem;
   margin: auto;
@@ -51,9 +64,13 @@ const routes = computed(() => {
     justify-content: space-between;
     .nav-item {
       padding-left: 10px;
+      @media (min-width: 768px) {
+        padding-left: 20px;
+      }
       a {
         padding-bottom: 3px;
         &.active {
+          color: var(--rengoku-alt);
           font-weight: bold;
           letter-spacing: 0.2px;
         }

@@ -1,11 +1,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
+:root {
+  --rengoku: #dda20a;
+  --rengoku-alt: #c1221c;
+  --rengoku-alt-light: #ffbbb9;
+  --rengoku-light: #f4d278;
+  --rengoku-bg: #f8f8f8;
+  --code-line-height: 24px;
+  --code-font-family: var(--font-family-mono);
+  --code-font-size: 14px;
+  --code-inline-bg-color: #393e440d;
+  --code-bg-color: #2e3137;
+}
+.rengoku {
+  color: var(--rengoku);
+}
+.rengoku-alt {
+  color: var(--rengoku-alt);
+}
 html,
 body {
   font-family: 'Noto Sans', sans-serif;
   font-size: 16px;
+  background-color: var(--rengoku-bg);
 }
 a {
   text-decoration: none;
   color: inherit;
+}
+.header-anchor {
+  display: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+blockquote {
+  font-size: 1.4em;
+  // width: 80%;
+  max-width: 55rem;
+  margin: auto;
+  font-style: italic;
+  color: #555555;
+  padding: 1.2em 30px 1.2em 75px;
+  border-left: 8px solid var(--rengoku-alt-light);
+  line-height: 1.6;
+  position: relative;
+  background: #ededed;
+  @media (max-width: 768px) {
+    width: 70%;
+    font-size: 1em;
+    padding: 1.2em 30px 1.2em 50px;
+  }
+}
+
+blockquote::before {
+  font-family: Arial;
+  content: '\201C';
+  color: var(--rengoku-alt-light);
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+
+blockquote::after {
+  content: '';
+}
+
+blockquote span {
+  display: block;
+  color: #333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 1em;
+}
+.license {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  text-align: center;
+}
+.landing-image {
+  padding: 30px 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
