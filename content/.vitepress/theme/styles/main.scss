@@ -31,6 +31,27 @@ a {
 .header-anchor {
   display: none;
 }
+.content {
+  p {
+    line-height: 1.7;
+    a {
+      color: var(--rengoku-alt) !important;
+      text-decoration: underline;
+    }
+  }
+  strong {
+    letter-spacing: 0.8px !important;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+    letter-spacing: 0.8px !important;
+  }
+}
 h1,
 h2,
 h3,
@@ -95,7 +116,7 @@ h6 {
 .table-of-contents {
   ul > li {
     a {
-      color: var(--rengoku);
+      color: var(--rengoku-alt);
       text-decoration: underline;
     }
   }

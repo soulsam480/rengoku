@@ -29,6 +29,11 @@ defineProps({
             {{ truncateDesc(post.description) }}
           </p>
           <p class="date">{{ post.date?.string }}</p>
+          <p v-if="post.tags" class="tags">
+            <span class="tag" v-for="tag in post.tags" :key="tag">
+              <a :href="`/tags.html#${tag}`">{{ tag }}</a>
+            </span>
+          </p>
           <p class="read-more"><a :href="post.href">Read more</a></p>
         </div>
       </div>
@@ -47,6 +52,11 @@ defineProps({
           {{ truncateDesc(post.description) }}
         </p>
         <p class="date">{{ post.date?.string }}</p>
+        <p v-if="post.tags" class="tags">
+          <span class="tag" v-for="tag in post.tags" :key="tag">
+            <a :href="`/tags.html#${tag}`">{{ tag }}</a>
+          </span>
+        </p>
         <p class="read-more"><a :href="post.href">Read more ></a></p>
       </div>
     </div>
@@ -65,6 +75,9 @@ defineProps({
 }
 .col-sm-6 {
   padding: 0 1rem;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  max-width: 100%;
   .banner {
     @media (max-width: 768px) {
       margin-bottom: 0 !important;
@@ -103,6 +116,16 @@ defineProps({
     }
     .date {
       color: var(--rengoku);
+    }
+    .tags {
+      text-align: left;
+      .tag {
+        margin: 0 2px;
+        padding: 4px 8px;
+        border-radius: 25px;
+        border: 1px solid var(--rengoku-light);
+        background-color: mix(white, #f4d278, 80%);
+      }
     }
     .desc {
       color: mix(black, white, 50%);

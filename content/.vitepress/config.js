@@ -5,13 +5,16 @@ const { getPosts } = require('./getPosts');
  */
 module.exports = {
   markdown: {
-    anchor: false,
+    anchor: { permalink: false },
+    linkify: true,
+    toc: { includeLevel: [1, 2, 3] },
   },
   title: 'Rengoku',
   description: 'A vitepress theme inspired by Flame Hashira Kyōjurō Rengoku.',
   customData: {
     posts: getPosts(),
   },
+
   themeConfig: {
     splitRow: true,
     nav: [
@@ -20,8 +23,8 @@ module.exports = {
         text: 'Home',
       },
       {
-        link: '/about.html',
-        text: 'About',
+        link: '/blog/docs.html',
+        text: 'Docs',
       },
       {
         link: '/blog/index.html',

@@ -23,7 +23,7 @@ const routes = computed(() => {
 });
 </script>
 <template>
-  <header class="nav">
+  <header class="nav nav-bar">
     <div class="brand" :class="homeColors">
       <a href="/">{{ $site.title }}</a>
     </div>
