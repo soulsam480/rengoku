@@ -2,7 +2,6 @@
   "name": "rengoku",
   "version": "0.0.1",
   "description": "A Vitepress blog with custom theming",
-  "main": "index.js",
   "author": "soulsam480 <soulsam480@hotmail.com>",
   "license": "MIT",
   "scripts": {
@@ -11,6 +10,7 @@
     "serve": "vitepress serve content"
   },
   "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.2",
     "gray-matter": "^4.0.3",
     "sass": "^1.32.12",
     "vitepress": "^0.13.2",
