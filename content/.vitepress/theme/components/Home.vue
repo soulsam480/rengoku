@@ -20,7 +20,8 @@ const { posts } = siteData.value.customData as { posts: Post[] };
     <div v-if="$themeConfig.feedOnHomepage">
       <hr v-if="$frontmatter.hero" class="feed-splitter" />
       <h1 v-if="$frontmatter.hero" class="home-feed-header">Blog articles</h1>
-      <PostCards :posts="posts" />
+      <PostCards :posts="posts.slice(0, 4)" />
+      <p class="visit-blog"><a href="/blog/index">Visit blog</a></p>
     </div>
     <footer class="license rengoku-alt" v-if="!$themeConfig.feedOnHomepage">
       © Sambit Sahoo , MIT Licensed

@@ -17,18 +17,19 @@ module.exports = {
 
   themeConfig: {
     splitRow: true,
+    feedOnHomepage: true,
     nav: [
-      {
-        link: '/',
-        text: 'Home',
-      },
-      {
-        link: '/blog/docs.html',
-        text: 'Docs',
-      },
       {
         link: '/blog/index.html',
         text: 'Blog',
+      },
+      {
+        link: '/about.html',
+        text: 'About',
+      },
+      {
+        link: '/projects.html',
+        text: 'Projects',
       },
     ],
   },
