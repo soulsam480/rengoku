@@ -85,7 +85,7 @@ Change the MID and Merchant Key to your paytm merchant account. The callback url
 If you don't wish to use firebase for order validation and confirmation, you can stop here and remove firebase completely from the project. If you wish to use, let's move in to the next step.
 
 #### Usage with Firebase
-We will use [firebase-admin](npmjs.com/package/firebase-admin) sdk for nodejs to access admin privilages. With firebase admin running on server we can perform CRUD operations on realtime database easily.
+We will use [firebase-admin](https://npmjs.com/package/firebase-admin) sdk for nodejs to access admin privilages. With firebase admin running on server we can perform CRUD operations on realtime database easily.
 
 To setup admin sdk you need a firebase service account. To get yourself one open you firebase admin dashboard and then project settings > service accounts. Create one for your project and download the credentials in json. Then open src/cred/authKey.js . Add the credentials in their respective places.
 ```javascript
