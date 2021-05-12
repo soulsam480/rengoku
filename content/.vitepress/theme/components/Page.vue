@@ -15,7 +15,8 @@ const routeIs = computed((): string => route.path);
     <div v-else-if="routeIs.match(/\/tags.html/)">
       <ClientOnly><Tags /></ClientOnly>
     </div>
-    <Home v-else />
+    <Home v-else-if="routeIs === '/'" />
+    <Content v-else />
   </div>
 </template>
 <style lang="scss" scoped>
