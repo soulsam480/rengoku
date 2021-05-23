@@ -27,7 +27,15 @@ const { posts } = siteData.value.customData as { posts: Post[] };
       © Sambit Sahoo , MIT Licensed
     </footer>
     <footer class="rengoku-alt" v-else style="text-align: center">
-      © Sambit Sahoo , MIT Licensed
+      <div>© Sambit Sahoo , MIT Licensed</div>
+      <div>
+        <a href="https://github.com/soulsam480" class="nav-link">github</a> ,
+        <a href="https://https://github.com/soulsam480/rengoku" class="nav-link"
+          >rengoku</a
+        >
+        ,
+        <a href="mailto:soulsam480@hotmail.com" class="nav-link">mail</a>
+      </div>
     </footer>
   </div>
 </template>
