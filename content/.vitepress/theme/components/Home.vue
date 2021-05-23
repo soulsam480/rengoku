@@ -30,7 +30,7 @@ const { posts } = siteData.value.customData as { posts: Post[] };
       <div>© Sambit Sahoo , MIT Licensed</div>
       <div>
         <a href="https://github.com/soulsam480" class="nav-link">github</a> ,
-        <a href="https://https://github.com/soulsam480/rengoku" class="nav-link"
+        <a href="https://github.com/soulsam480/rengoku" class="nav-link"
           >rengoku</a
         >
         ,
