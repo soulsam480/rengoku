@@ -36,8 +36,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
       :src="pageData.frontmatter.banner"
       :alt="pageData.frontmatter.title"
     />
-    <p v-if="pageData.frontmatter.tags" class="tags">
-      Tags:
+    <div v-if="pageData.frontmatter.tags" class="tags">
       <span
         class="tag"
         v-for="tag in pageData.frontmatter.tags.split(',')"
@@ -45,7 +44,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
       >
         <a :href="`/tags.html#${tag}`">{{ tag }}</a>
       </span>
-    </p>
+    </div>
     <div class="content"><Content /></div>
   </article>
   <footer class="post-switch">
@@ -98,10 +97,13 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
     width: 100%;
   }
   .tags {
-    text-align: left;
-    padding-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-top: 20px;
+    align-items: center;
     .tag {
-      margin: 0 2px;
+      margin: 3px;
       padding: 4px 8px;
       border-radius: 25px;
       border: 1px solid var(--rengoku-light);
