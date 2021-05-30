@@ -6,7 +6,7 @@ banner: /pdf-donkey.svg
 author: 
     name: Sambit Sahoo
     github: soulsam480  
-tags: welcome,pdf-donkey,open-source
+tags: pdf-donkey,open-source,welcome
 ---
 
 [__Project__](https://donkey.sambitsahoo.com) | [__GitHub Repo__](https://github.com/soulsam480/pdf-donkey) | [__Product Hunt__](https://www.producthunt.com/posts/pdf-donkey?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-pdf-donkey) | [__Changelog__](https://github.com/soulsam480/pdf-donkey/blob/master/CHANGELOG.md)
