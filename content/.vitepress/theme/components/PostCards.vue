@@ -29,11 +29,11 @@ defineProps({
             {{ truncateDesc(post.description) }}
           </p>
           <p class="date">{{ post.date?.string }}</p>
-          <p v-if="post.tags" class="tags">
+          <div v-if="post.tags" class="tags">
             <span class="tag" v-for="tag in post.tags" :key="tag">
               <a :href="`/tags.html#${tag}`">{{ tag }}</a>
             </span>
-          </p>
+          </div>
           <p class="read-more"><a :href="post.href">Read more</a></p>
         </div>
       </div>
@@ -118,11 +118,12 @@ defineProps({
       color: var(--rengoku);
     }
     .tags {
+      display: flex;
       flex-wrap: wrap;
       flex-direction: row;
       align-items: center;
       .tag {
-        margin: 0 2px;
+        margin: 4px;
         padding: 4px 8px;
         border-radius: 25px;
         border: 1px solid var(--rengoku-light);
