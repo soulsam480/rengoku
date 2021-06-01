@@ -1,12 +1,68 @@
 <script setup lang="ts">
+import { useHead } from '@vueuse/head';
 import { usePageData, useRoute, useSiteData } from 'vitepress';
 import { computed } from 'vue';
 import { formatDate } from '../utils';
 const pageData = usePageData();
 const route = useRoute();
 const posts = useSiteData().value.customData.posts;
+function ifImageMeta() {
+  if (!pageData.value.frontmatter.banner) return [];
+  return [
+    {
+      property: 'og:image',
+      content: computed(
+        () =>
+          `https://sambitsahoo.com/blog/${pageData.value.frontmatter.banner}`,
+      ),
+      key: 'og:image',
+    },
+  ];
+}
+useHead({
+  meta: [
+    {
+      property: 'author',
+      content: 'Sambit Sahoo',
+      key: 'author',
+    },
+    {
+      property: 'og:title',
+      content: computed(() => pageData.value.frontmatter.title),
+      key: 'og:title',
+    },
+    {
+      property: 'og:type',
+      content: 'article',
+      key: 'og:type',
+    },
+    {
+      property: 'og:url',
+      content: computed(() => `https://sambitsahoo.com/blog/${route.path}`),
+      key: 'og:url',
+    },
+
+    {
+      property: 'og:description',
+      content: computed(() => pageData.value.frontmatter.description),
+      key: 'og:decsription',
+    },
+    {
+      property: 'twitter:card',
+      content: 'summary',
+      key: 'twitter:card',
+    },
+    {
+      property: 'twitter:creator',
+      content: '@sambitsahoojs',
+      key: 'twitter:creator',
+    },
+    ...ifImageMeta(),
+  ],
+});
+
 function findCurrentIndex(p: any) {
-  return posts.findIndex((p) => p.href === route.path);
+  return posts.findIndex((p: any) => p.href === route.path);
 }
 // use the customData date which contains pre-resolved date info
 const nextPost = computed(() => posts[findCurrentIndex() - 1]);
