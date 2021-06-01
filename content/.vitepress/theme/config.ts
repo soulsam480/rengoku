@@ -1,6 +1,17 @@
 export namespace DefaultTheme {
   export interface Config {
     /**
+     * Deployed site url for SEO tag generation
+     * Add without trailing slash
+     * @example https://sambitsahoo.com
+     */
+    siteUrl: string;
+    /**
+     * Twitter username with @
+     * @example @sambitsahoojs
+     */
+    twitterUsername: string;
+    /**
      * Show posts feed on home
      * @default false
      */

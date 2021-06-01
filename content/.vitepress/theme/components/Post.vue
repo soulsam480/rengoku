@@ -5,6 +5,7 @@ import { computed } from 'vue';
 import { formatDate } from '../utils';
 const pageData = usePageData();
 const route = useRoute();
+const { themeConfig } = useSiteData().value;
 const posts = useSiteData().value.customData.posts;
 function ifImageMeta() {
   if (!pageData.value.frontmatter.banner) return [];
@@ -13,7 +14,9 @@ function ifImageMeta() {
       property: 'og:image',
       content: computed(
         () =>
-          `https://sambitsahoo.com/blog/${pageData.value.frontmatter.banner}`,
+          `${themeConfig.siteUrl || 'https://sambitsahoo.com'}${
+            pageData.value.frontmatter.banner
+          }`,
       ),
       key: 'og:image',
     },
@@ -38,7 +41,10 @@ useHead({
     },
     {
       property: 'og:url',
-      content: computed(() => `https://sambitsahoo.com/blog/${route.path}`),
+      content: computed(
+        () =>
+          `${themeConfig.siteUrl || 'https://sambitsahoo.com'}${route.path}`,
+      ),
       key: 'og:url',
     },
 
@@ -54,7 +60,7 @@ useHead({
     },
     {
       property: 'twitter:creator',
-      content: '@sambitsahoojs',
+      content: themeConfig.twitterUsername || '@sambitsahoojs',
       key: 'twitter:creator',
     },
     ...ifImageMeta(),

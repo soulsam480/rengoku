@@ -17,6 +17,8 @@ module.exports = {
 
   themeConfig: {
     splitRow: true,
+    siteUrl: 'https://sambitsahoo.com',
+    twitterUsername:'@sambitsahoojs',
     nav: [
       {
         link: '/',
