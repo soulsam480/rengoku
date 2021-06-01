@@ -18,6 +18,8 @@ module.exports = {
   themeConfig: {
     splitRow: true,
     feedOnHomepage: true,
+    siteUrl: 'https://sambitsahoo.com',
+    twitterUsername:'@sambitsahoojs',
     nav: [
       {
         link: '/blog/index.html',
