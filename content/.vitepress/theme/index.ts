@@ -8,7 +8,7 @@ import { createHead } from '@vueuse/head';
 const theme: Theme = {
   Layout,
   NotFound,
-  enhanceApp: ({ app, router }) => {
+  enhanceApp: ({ app }) => {
     const head = createHead();
     app.use(head);
   },
