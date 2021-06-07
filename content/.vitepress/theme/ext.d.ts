@@ -1,9 +1,10 @@
+import { DefaultTheme } from './config';
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     $withBase: (param: string) => string;
     $site: SiteData<any>;
     $siteByRoute: SiteData<any>;
-    $themeConfig: Record<string, any>;
+    $themeConfig: DefaultTheme.Config;
     $page: PageData;
     $frontmatter: Record<string, any>;
     $lang: string;

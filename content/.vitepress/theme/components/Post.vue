@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head';
 import { usePageData, useRoute, useSiteData } from 'vitepress';
+import type { DefaultTheme } from '../config';
+
 import { computed } from 'vue';
 import { formatDate } from '../utils';
 const pageData = usePageData();
 const route = useRoute();
-const { themeConfig } = useSiteData().value;
+const { themeConfig } = useSiteData<DefaultTheme.Config>().value;
 const posts = useSiteData().value.customData.posts;
 function ifImageMeta() {
   if (!pageData.value.frontmatter.banner) return [];
