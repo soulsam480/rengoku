@@ -9,14 +9,11 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "emitDeclarationOnly": true,
-    "declaration": true,
     "baseUrl": ".",
     "types": ["vite/client"],
     "lib": ["esnext", "dom", "dom.iterable"],
     "outDir": "./dist"
   },
-  "include": ["content/.vitepress/theme"],
+  "include": ["content/.vitepress/theme/"],
   "exclude": ["node_modules", "types"]
 }

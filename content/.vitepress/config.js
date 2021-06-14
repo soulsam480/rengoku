@@ -1,36 +1,24 @@
 // this is important as it's being used for listing blog articless
 const { getPosts } = require('./getPosts');
 /**
- * @type {import("vitepress").UserConfig<import("./theme/config").DefaultTheme.Config> }
+ * @type {import("vitepress").UserConfig}
  */
 module.exports = {
   markdown: {
-    anchor: { permalink: false },
     linkify: true,
     toc: { includeLevel: [1, 2, 3] },
   },
-  title: 'Rengoku',
-  description: 'A vitepress theme inspired by Flame Hashira Kyōjurō Rengoku.',
-  customData: {
-    posts: getPosts(),
-  },
-
+  title: 'Rengoku Docs',
+  description: 'A vitepress docs theme inspired by Flame Hashira Kyōjurō Rengoku.',
   themeConfig: {
-    splitRow: true,
-    siteUrl: 'https://sambitsahoo.com',
-    twitterUsername:'@sambitsahoojs',
     nav: [
       {
         link: '/',
         text: 'Home',
       },
       {
-        link: '/blog/docs.html',
+        link: '/docs.html',
         text: 'Docs',
-      },
-      {
-        link: '/blog/index.html',
-        text: 'Blog',
       },
     ],
   },

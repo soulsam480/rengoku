@@ -1,17 +1,8 @@
-import '../theme/styles/main.scss';
-import '../theme/styles/code.scss';
 import { Theme } from 'vitepress';
-import Layout from './Layout.vue';
-import NotFound from './NotFound.vue';
-import { createHead } from '@vueuse/head';
+import DefaultTheme from 'vitepress/dist/client/theme-default';
 
 const theme: Theme = {
-  Layout,
-  NotFound,
-  enhanceApp: ({ app }) => {
-    const head = createHead();
-    app.use(head);
-  },
+  ...DefaultTheme,
 };
 
 export default theme;
