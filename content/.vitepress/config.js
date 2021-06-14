@@ -1,12 +1,11 @@
-// this is important as it's being used for listing blog articless
-const { getPosts } = require('./getPosts');
 /**
- * @type {import("vitepress").UserConfig}
+ * @type {import("vitepress").UserConfig<import("vitepress").DefaultTheme.Config>}
  */
 module.exports = {
   markdown: {
     linkify: true,
     toc: { includeLevel: [1, 2, 3] },
+
   },
   title: 'Rengoku Docs',
   description: 'A vitepress docs theme inspired by Flame Hashira Kyōjurō Rengoku.',
@@ -17,7 +16,7 @@ module.exports = {
         text: 'Home',
       },
       {
-        link: '/docs.html',
+        link: '/docs/docs.html',
         text: 'Docs',
       },
     ],
