@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useSiteData } from 'vitepress';
+import { useData } from 'vitepress';
 import type { Post } from '../types';
 import PostCards from './PostCards.vue';
-const siteData = useSiteData();
+const { site: siteData } = useData();
 const { posts } = siteData.value.customData as { posts: Post[] };
 </script>
 <template>

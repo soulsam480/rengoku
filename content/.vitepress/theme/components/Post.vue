@@ -1,71 +1,75 @@
 <script setup lang="ts">
-import { useHead } from '@vueuse/head';
-import { usePageData, useRoute, useSiteData } from 'vitepress';
+// import { useHead } from '@vueuse/head';
+import { useRoute, useData } from 'vitepress';
+//@ts-ignore
+import VueCusdis from 'vue-cusdis';
 import { computed } from 'vue';
 import { formatDate } from '../utils';
-const pageData = usePageData();
-const route = useRoute();
-const { themeConfig } = useSiteData().value;
-const posts = useSiteData().value.customData.posts;
-function ifImageMeta() {
-  if (!pageData.value.frontmatter.banner) return [];
-  return [
-    {
-      property: 'og:image',
-      content: computed(
-        () =>
-          `${themeConfig.siteUrl || 'https://sambitsahoo.com'}${
-            pageData.value.frontmatter.banner
-          }`,
-      ),
-      key: 'og:image',
-    },
-  ];
-}
-useHead({
-  meta: [
-    {
-      property: 'author',
-      content: 'Sambit Sahoo',
-      key: 'author',
-    },
-    {
-      property: 'og:title',
-      content: computed(() => pageData.value.frontmatter.title),
-      key: 'og:title',
-    },
-    {
-      property: 'og:type',
-      content: 'article',
-      key: 'og:type',
-    },
-    {
-      property: 'og:url',
-      content: computed(
-        () =>
-          `${themeConfig.siteUrl || 'https://sambitsahoo.com'}${route.path}`,
-      ),
-      key: 'og:url',
-    },
 
-    {
-      property: 'og:description',
-      content: computed(() => pageData.value.frontmatter.description),
-      key: 'og:decsription',
-    },
-    {
-      property: 'twitter:card',
-      content: 'summary',
-      key: 'twitter:card',
-    },
-    {
-      property: 'twitter:creator',
-      content: themeConfig.twitterUsername || '@sambitsahoojs',
-      key: 'twitter:creator',
-    },
-    ...ifImageMeta(),
-  ],
-});
+const APP_ID = 'ab5ba4a4-9ec7-4c53-bc90-3c290bed5c85';
+const { site, frontmatter } = useData();
+const route = useRoute();
+const posts = site.value.customData.posts;
+
+// function ifImageMeta() {
+//   if (!frontmatter.value.banner) return [];
+//   return [
+//     {
+//       property: 'og:image',
+//       content: computed(
+//         () =>
+//           `${themeConfig.value.siteUrl || 'https://sambitsahoo.com'}${
+//             frontmatter.value.banner
+//           }`,
+//       ),
+//       key: 'og:image',
+//     },
+//   ];
+// }
+// useHead({
+//   meta: [
+//     {
+//       property: 'author',
+//       content: 'Sambit Sahoo',
+//       key: 'author',
+//     },
+//     {
+//       property: 'og:title',
+//       content: computed(() => pageData.value.frontmatter.title),
+//       key: 'og:title',
+//     },
+//     {
+//       property: 'og:type',
+//       content: 'article',
+//       key: 'og:type',
+//     },
+//     {
+//       property: 'og:url',
+//       content: computed(
+//         () =>
+//           `${themeConfig.siteUrl || 'https://sambitsahoo.com'}${route.path}`,
+//       ),
+//       key: 'og:url',
+//     },
+
+//     {
+//       property: 'og:description',
+//       content: computed(() => pageData.value.frontmatter.description),
+//       key: 'og:decsription',
+//     },
+//     {
+//       property: 'twitter:card',
+//       content: 'summary',
+//       key: 'twitter:card',
+//     },
+//     {
+//       property: 'twitter:creator',
+//       content: themeConfig.twitterUsername || '@sambitsahoojs',
+//       key: 'twitter:creator',
+//     },
+//     ...ifImageMeta(),
+//   ],
+// });
 
 function findCurrentIndex(p: any) {
   return posts.findIndex((p: any) => p.href === route.path);
@@ -76,34 +80,30 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
 </script>
 <template>
   <article class="article">
-    <p class="date" v-if="pageData.frontmatter.date">
-      {{ formatDate(pageData.frontmatter.date).string }}
+    <p class="date" v-if="frontmatter.date">
+      {{ formatDate(frontmatter.date).string }}
     </p>
 
-    <h1 class="title">{{ pageData.title }}</h1>
-    <p class="author" v-if="pageData.frontmatter.author">
-      <span v-if="pageData.frontmatter.author.github">
+    <h1 class="title">{{ frontmatter.title }}</h1>
+    <p class="author" v-if="frontmatter.author">
+      <span v-if="frontmatter.author.github">
         <a
           target="_blank"
-          :href="`https://github.com/${pageData.frontmatter.author.github}`"
-          >@{{ pageData.frontmatter.author.name }}</a
+          :href="`https://github.com/${frontmatter.author.github}`"
+          >@{{ frontmatter.author.name }}</a
         >
       </span>
-      <span v-else>@{{ pageData.frontmatter.author.name }}</span>
+      <span v-else>@{{ frontmatter.author.name }}</span>
     </p>
 
     <img
       class="banner"
-      v-if="pageData.frontmatter.banner"
-      :src="pageData.frontmatter.banner"
-      :alt="pageData.frontmatter.title"
+      v-if="frontmatter.banner"
+      :src="frontmatter.banner"
+      :alt="frontmatter.title"
     />
-    <div v-if="pageData.frontmatter.tags" class="tags">
-      <span
-        class="tag"
-        v-for="tag in pageData.frontmatter.tags.split(',')"
-        :key="tag"
-      >
+    <div v-if="frontmatter.tags" class="tags">
+      <span class="tag" v-for="tag in frontmatter.tags.split(',')" :key="tag">
         <a :href="`/tags.html#${tag}`">{{ tag }}</a>
       </span>
     </div>
@@ -123,6 +123,18 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
       </div>
     </div>
   </footer>
+  <br />
+  <ClientOnly>
+    <VueCusdis
+      :attrs="{
+        host: 'https://cusdis.com',
+        appId: APP_ID,
+        pageId: 'PAGE_ID',
+        pageTitle: 'PAGE_TITLE',
+        pageUrl: 'PAGE_URL',
+      }"
+    />
+  </ClientOnly>
   <br />
   <footer class="rengoku-alt" style="text-align: center">
     © Sambit Sahoo {{ new Date().getFullYear() }} , MIT Licensed

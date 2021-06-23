@@ -8,9 +8,13 @@ import { createHead } from '@vueuse/head';
 const theme: Theme = {
   Layout,
   NotFound,
-  enhanceApp: ({ app }) => {
+  enhanceApp: ({ app, router }) => {
     const head = createHead();
     app.use(head);
+
+    if (router.route.path.match(/\/blog\/(.*?).html/)) {
+      console.log('blog pages');
+    }
   },
 };
 

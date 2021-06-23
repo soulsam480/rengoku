@@ -3,6 +3,8 @@ import { defineProps } from 'vue';
 import type { PropType } from 'vue';
 import { truncateDesc } from '../utils';
 import type { Post } from '../types';
+import { useData } from 'vitepress';
+const { theme: themeConfig, frontmatter } = useData();
 
 defineProps({
   posts: {
@@ -13,7 +15,7 @@ defineProps({
 </script>
 <template>
   <div class="posts">
-    <div v-if="$frontmatter.splitRow || $themeConfig.splitRow">
+    <div v-if="frontmatter.splitRow || themeConfig.splitRow">
       <div
         class="post-card"
         :class="{ row: post.banner }"

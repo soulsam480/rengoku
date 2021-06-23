@@ -14,11 +14,10 @@ module.exports = {
   customData: {
     posts: getPosts(),
   },
-
   themeConfig: {
     splitRow: true,
     siteUrl: 'https://sambitsahoo.com',
-    twitterUsername:'@sambitsahoojs',
+    twitterUsername: '@sambitsahoojs',
     nav: [
       {
         link: '/',

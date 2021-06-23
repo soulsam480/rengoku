@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useRoute, useSiteDataByRoute } from 'vitepress';
+import { useRoute, useData } from 'vitepress';
 import { computed } from 'vue';
-const siteByRoute = useSiteDataByRoute();
+const { theme: themeConfig, site } = useData();
 const route = useRoute();
 const isRouteActive = (path: string) => route.path === path;
 const homeColors = computed(() => {
@@ -13,19 +13,18 @@ const homeColors = computed(() => {
   return ['rengoku-alt'];
 });
 const routes = computed(() => {
-  const { themeConfig } = siteByRoute.value;
-  if (themeConfig.nav.length > 3) {
+  if (themeConfig.value.nav.length > 3) {
     console.error('Maximum 3 nav bar elements are allowed!');
-    return themeConfig.nav.slice(0, 3);
+    return themeConfig.value.nav.slice(0, 3);
   }
 
-  return themeConfig.nav;
+  return themeConfig.value.nav;
 });
 </script>
 <template>
   <header class="nav nav-bar">
     <div class="brand" :class="homeColors">
-      <a href="/">{{ $site.title }}</a>
+      <a href="/">{{ site.title }}</a>
     </div>
     <div class="nav-items">
       <div class="nav-item" v-for="nav in routes" :key="nav.link">
