@@ -20,7 +20,6 @@
     "node": ">=12.0.0"
   },
   "dependencies": {
-    "@vueuse/head": "^0.5.1",
     "vue-cusdis": "^2.1.0"
   }
 }

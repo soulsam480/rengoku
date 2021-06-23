@@ -1,75 +1,13 @@
 <script setup lang="ts">
-// import { useHead } from '@vueuse/head';
 import { useRoute, useData } from 'vitepress';
 //@ts-ignore
 import VueCusdis from 'vue-cusdis';
 import { computed } from 'vue';
 import { formatDate } from '../utils';
 
-const APP_ID = 'ab5ba4a4-9ec7-4c53-bc90-3c290bed5c85';
-const { site, frontmatter } = useData();
+const { site, frontmatter, theme } = useData();
 const route = useRoute();
 const posts = site.value.customData.posts;
-
-// function ifImageMeta() {
-//   if (!frontmatter.value.banner) return [];
-//   return [
-//     {
-//       property: 'og:image',
-//       content: computed(
-//         () =>
-//           `${themeConfig.value.siteUrl || 'https://sambitsahoo.com'}${
-//             frontmatter.value.banner
-//           }`,
-//       ),
-//       key: 'og:image',
-//     },
-//   ];
-// }
-// useHead({
-//   meta: [
-//     {
-//       property: 'author',
-//       content: 'Sambit Sahoo',
-//       key: 'author',
-//     },
-//     {
-//       property: 'og:title',
-//       content: computed(() => pageData.value.frontmatter.title),
-//       key: 'og:title',
-//     },
-//     {
-//       property: 'og:type',
-//       content: 'article',
-//       key: 'og:type',
-//     },
-//     {
-//       property: 'og:url',
-//       content: computed(
-//         () =>
-//           `${themeConfig.siteUrl || 'https://sambitsahoo.com'}${route.path}`,
-//       ),
-//       key: 'og:url',
-//     },
-
-//     {
-//       property: 'og:description',
-//       content: computed(() => pageData.value.frontmatter.description),
-//       key: 'og:decsription',
-//     },
-//     {
-//       property: 'twitter:card',
-//       content: 'summary',
-//       key: 'twitter:card',
-//     },
-//     {
-//       property: 'twitter:creator',
-//       content: themeConfig.twitterUsername || '@sambitsahoojs',
-//       key: 'twitter:creator',
-//     },
-//     ...ifImageMeta(),
-//   ],
-// });
 
 function findCurrentIndex(p: any) {
   return posts.findIndex((p: any) => p.href === route.path);
@@ -124,17 +62,20 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
     </div>
   </footer>
   <br />
-  <ClientOnly>
-    <VueCusdis
-      :attrs="{
-        host: 'https://cusdis.com',
-        appId: APP_ID,
-        pageId: 'PAGE_ID',
-        pageTitle: 'PAGE_TITLE',
-        pageUrl: 'PAGE_URL',
-      }"
-    />
-  </ClientOnly>
+  <div v-if="theme.comments">
+    <h3 class="comments">Comments</h3>
+    <ClientOnly>
+      <VueCusdis
+        :attrs="{
+          host: theme.cusdis_host || 'https://cusdis.com',
+          appId: theme.cusdis_id,
+          pageId: route.path,
+          pageTitle: frontmatter.title,
+          pageUrl: `${theme.siteUrl}${route.path}`,
+        }"
+      />
+    </ClientOnly>
+  </div>
   <br />
   <footer class="rengoku-alt" style="text-align: center">
     © Sambit Sahoo {{ new Date().getFullYear() }} , MIT Licensed
@@ -214,5 +155,10 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
   .previous {
     text-align: left;
   }
+}
+.comments {
+  text-align: center;
+  color: var(--rengoku-alt);
+  text-decoration: underline;
 }
 </style>

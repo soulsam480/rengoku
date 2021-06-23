@@ -32,5 +32,8 @@ module.exports = {
         text: 'Blog',
       },
     ],
+    cusdis_host: 'https://cusdis.com',
+    comments: true,
+    cusdis_id: 'ab5ba4a4-9ec7-4c53-bc90-3c290bed5c85',
   },
 };

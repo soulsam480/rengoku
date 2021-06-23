@@ -78,6 +78,10 @@ tags: welcome,rengoku,introduction # comma separated values with no space in bet
 ```
 ## Images
 To use images inside blog aricles, put them in the `content/public` directory and reference them by absolute paths e.g. **/rengoku_banner.webp**. 
+
+## Comments
+Rengoku uses [cusdis](https://cusdis.com/) for comment system. Change `app_id` in `cinfig.js` to setup your account for comments.
+
 ## Theme config
 
 Theme config can be referenced from [`content/.vitepress/theme/config.ts`](./content/.vitepress/theme/config.ts).
