@@ -33,6 +33,21 @@ export namespace DefaultTheme {
      * @default false
      */
     splitRow?: boolean;
+    /**
+     * Setup comments for blog articles
+     * For this to work properly, you need to have siteUrl set
+     */
+    comments?: boolean;
+    /**
+     * Your cusdis APP ID for comments
+     * mandatory if comments are enabled
+     */
+    cusdis_id?: string;
+    /**
+     * Your cusdis host URL
+     * @default https://cusdis.com
+     */
+    cusdis_host: string;
   }
   export type Nav = {
     /**

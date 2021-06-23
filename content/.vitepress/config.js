@@ -14,12 +14,11 @@ module.exports = {
   customData: {
     posts: getPosts(),
   },
-
   themeConfig: {
     splitRow: true,
     feedOnHomepage: true,
     siteUrl: 'https://sambitsahoo.com',
-    twitterUsername:'@sambitsahoojs',
+    twitterUsername: '@sambitsahoojs',
     nav: [
       {
         link: '/blog/index.html',
@@ -34,5 +33,8 @@ module.exports = {
         text: 'Projects',
       },
     ],
+    cusdis_host: 'https://cusdis.com',
+    comments: true,
+    cusdis_id: 'ab5ba4a4-9ec7-4c53-bc90-3c290bed5c85',
   },
 };
