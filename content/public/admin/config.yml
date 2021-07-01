@@ -33,6 +33,12 @@ collections:
               widget: 'string',
               required: true,
             }
-
+      - {
+          label: 'Created Date',
+          name: 'date',
+          widget: 'date',
+          required: true,
+          format: 'YYYY-MM-DD',
+        }
       - { label: 'Banner', name: 'banner', widget: 'image', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown', required: true }
