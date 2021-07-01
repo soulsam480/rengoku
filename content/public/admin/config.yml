@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway
+  branch: master
+# when using the default proxy server port
+local_backend: true
+publish_mode: editorial_workflow
+media_folder: 'content/public'
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'content/blog'
+    create: true
+    slug: '{{slug}}'
+    sort: 'date:desc'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - {
+          label: Description,
+          name: description,
+          widget: text,
+          required: true,
+          pattern: ['.{0,100}', 'Must be within 0 and 100 characters'],
+        }
+      - label: 'Author'
+        name: 'author'
+        widget: 'object'
+        required: true
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string', required: true }
+          - {
+              label: 'Github',
+              name: 'github',
+              widget: 'string',
+              required: true,
+            }
+
+      - { label: 'Banner', name: 'banner', widget: 'image', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: true }
