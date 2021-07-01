@@ -5,6 +5,7 @@ backend:
 local_backend: true
 publish_mode: editorial_workflow
 media_folder: 'content/public'
+public_folder: '/'
 collections:
   - name: 'blog'
     label: 'Blog'
