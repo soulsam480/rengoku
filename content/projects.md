@@ -1,3 +1,1 @@
-# Projects
-
-WIP
+<Projects/>
