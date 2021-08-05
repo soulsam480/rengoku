@@ -4,7 +4,7 @@ import { myGithub, projects } from '../constants';
 <template>
   <div>
     <div class="res-container">
-      <b>WIP</b>
+      <h2>Projects</h2>
       <div class="row">
         <div class="col-6" v-for="project in projects" :key="project.title">
           <p>
@@ -30,8 +30,16 @@ import { myGithub, projects } from '../constants';
           <small>
             {{ project.desc }}
           </small>
+          <br />
+          <small v-if="project.stack.length">
+            <b> stack: </b> {{ project.stack.join(', ') }}
+          </small>
         </div>
       </div>
+      <br />
+      <a href="https://github.com/soulsam480"
+        ><span><u>Explore more projects on GitHub</u></span></a
+      >
     </div>
   </div>
 </template>
@@ -47,6 +55,9 @@ import { myGithub, projects } from '../constants';
 
 .res-container {
   padding: 10px 0;
+  h2 {
+    margin-block-end: 10px;
+  }
 }
 .res-data {
   padding-left: 10px;

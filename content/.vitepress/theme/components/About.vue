@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { myGithub, projects } from '../constants';
+</script>
+
 <template>
   <section>
     <br />
@@ -46,32 +50,50 @@
         <p class="res-head-2"><span>About</span></p>
         <div class="res-data">
           <p>
-            Hello, I'm Sambit Sahoo, an undergraduate student and freelance
-            frontend developer. I'm passionate about coding as I love
-            materailizing an Idea to a smooth user interface.
+            Hello, I'm Sambit Sahoo, a Frontend Developer working at Evidev LLP.
+            I'm passionate about coding as I love materailizing an Idea to a
+            smooth user interface.
           </p>
           <p>
             Most of my work is open-source and I belive in the idea of community
             built software. I feel that participating in open-source gives us an
-            opprtunity to gain more knowledge.
-          </p>
-          <p>
-            I'm also the Co-Founder/CTO of
-            <a href="https://tiaamo.com">Tiaamo.com</a>. We are a clothing
-            business which primarily operates in the wholesale domain. When I'm
-            not coding I mostly take photos or write articles. I'm an otaku at
-            heart and <em>One Piece </em> is my favourite anime.
+            opprtunity to gain more knowledge. When I'm not coding I mostly take
+            photos or write articles. I'm an otaku at heart and One Piece is my
+            favourite anime.
           </p>
         </div>
       </div>
       <div class="res-container">
         <p class="res-head-2"><span>Work Experience</span></p>
-
         <div class="res-data row">
           <div class="col-6">
             <p>
+              <span>Evidev LLP</span>
+              <small class="muted"><em> &nbsp;Frontend Developer</em></small>
+              <br />
+              <small class="muted">DEC 2020 - PRESENT</small>
+              <a href="http://evidev.tech/" target="_blank" class="nav-link">
+                <small>site</small>
+              </a>
+            </p>
+
+            <small>
+              <ul>
+                <li>
+                  Working on a FinTech product for client
+                  <b>Evident Limited </b>(DEC 2020 - present)
+                </li>
+                <li>
+                  Working on a Trading marketplace for client
+                  <b>Hunter Technology Corp.</b> (MAY 2021 - present)
+                </li>
+              </ul>
+            </small>
+          </div>
+          <div class="col-6">
+            <p>
               <span>Tiaamo.com</span>
-              <small class="muted"><em>Co-Founder</em></small> <br />
+              <small class="muted"><em> &nbsp;Co-Founder</em></small> <br />
               <small class="muted">MARCH 2018 - PRESENT</small>
               <a
                 href="https://noter.sambitsahoo.com"
@@ -88,10 +110,12 @@
               Industries.
             </small>
           </div>
+        </div>
+        <div class="res-data row">
           <div class="col-6">
             <p>
               <span>Public Incubator Inc.</span>
-              <span class="muted"><em>Frontend Intern</em></span>
+              <small class="muted"><em> &nbsp;Frontend Intern</em></small>
               <br />
               <small class="muted">MARCH 2020 - APRIL 2020</small>
               <a
@@ -112,146 +136,55 @@
       <div class="res-container">
         <p class="res-head-2"><span>Stack</span></p>
         <div class="res-data">
+          <p><b>Frontend : </b> Vuejs, Reactjs, Electron</p>
           <p>
-            <b>Frontend : </b> Typescript, Javascript, Vuejs, Reactjs, Electron
+            <b>Frontend Frameworks/ Liabraries : </b> Quasar, Ionic-vue,
+            Bootstrap, TailwindCSS
           </p>
-          <p><b>Frontend Frameworks : </b> Quasar, Ionic</p>
-          <p><b>Backend : </b> Nodejs, PostgreSQL, Sqlite3, Serverless</p>
+          <p><b>Backend : </b> Nodejs, PostgreSQL, Sqlite3</p>
           <p><b>DevOps : </b> Firebase</p>
-          <p><b>Languages : </b> Typescript, Javascript, Python</p>
+          <p>
+            <b>Languages : </b> Typescript, Javascript, Python, Golang
+            (learning)
+          </p>
+          <p><b>TEsting : </b> Cypress, Jest</p>
           <p><b>Graphics : </b> Adobe Photoshop, Adobe Illustrator</p>
         </div>
       </div>
       <div class="res-container">
         <p class="res-head-2"><span>Projects</span></p>
         <div class="res-data row">
-          <div class="col-6">
+          <div
+            class="col-6"
+            v-for="project in projects.slice(0, 4)"
+            :key="project.title"
+          >
             <p>
-              <span>BillBird</span>
-              <a
-                href="https://beta.billbird.in"
-                target="_blank"
-                class="nav-link"
-                ><small>site</small>
-              </a>
+              <span> {{ project.title }} </span>
+              <template v-for="link in project.links" :key="link.url">
+                <a
+                  v-if="link.label !== 'github'"
+                  :href="link.url"
+                  target="_blank"
+                  class="nav-link"
+                  ><small> {{ link.label }} </small>
+                </a>
+                <a
+                  v-else
+                  :href="myGithub + link.url"
+                  target="_blank"
+                  class="nav-link"
+                  ><small> {{ link.label }} </small>
+                </a>
+              </template>
             </p>
 
             <small>
-              On demand billing service built with Vuejs on frontend Django on
-              backend. Complete Business management with Billing, Customer
-              Ledger, Inventory.
+              {{ project.desc }}
             </small>
-          </div>
-          <div class="col-6">
-            <p>
-              <span>Noter</span>
-              <a
-                href="https://github.com/soulsam480/noter"
-                target="_blank"
-                class="nav-link"
-              >
-                <small>github</small>
-              </a>
-              <a
-                href="https://noter.sambitsahoo.com"
-                target="_blank"
-                class="nav-link"
-              >
-                <small>site</small>
-              </a>
-            </p>
-
-            <small>
-              Noter is an open source note taking and sharing platform built
-              with Vuejs and Firebase. It has various types of text formatting
-              features with realtime note update across multiple devices.
-            </small>
-          </div>
-        </div>
-        <div class="res-data row">
-          <div class="col-6">
-            <p>
-              <span>Elec-SQLite-Vue</span>
-              <a
-                href="https://github.com/soulsam480/elec-sqlite-vue"
-                target="_blank"
-                class="nav-link"
-              >
-                <small>github</small>
-              </a>
-            </p>
-
-            <small>
-              Proof Of Concept for Electron app with Vue 3 frontend and
-              persisted database with SQlite.
-            </small>
-          </div>
-          <div class="col-6">
-            <p>
-              <span>Shoyo</span>
-              <a
-                href="https://github.com/soulsam480/shoyo"
-                target="_blank"
-                class="nav-link"
-              >
-                <small>github</small>
-              </a>
-              <a
-                href="https://shoyo.sambitsahoo.com"
-                target="_blank"
-                class="nav-link"
-              >
-                <small>site</small>
-              </a>
-            </p>
-
-            <small
-              >A light and minimal CSS library. shoyo adds a very basic styling
-              for the developer to customize. It's a developer friendly library
-              in a sense where customisation is done primarily.
-            </small>
-          </div>
-        </div>
-        <div class="res-data row">
-          <div class="col-6">
-            <p>
-              <span>Ecom CMS</span>
-              <a
-                href="https://github.com/soulsam480/ecom-cms"
-                target="_blank"
-                class="nav-link"
-              >
-                <small>github</small>
-              </a>
-              <a
-                href="https://admin.sambitsahoo.com"
-                target="_blank"
-                class="nav-link"
-              >
-                <small>site</small>
-              </a>
-            </p>
-
-            <small>
-              Open source content management system developed in vuejs for usage
-              with firebase powered Ecommerce Web Apps.
-            </small>
-          </div>
-          <div class="col-6">
-            <p>
-              <span>Node Music</span>
-              <a
-                href="https://github.com/soulsam480/node-music"
-                target="_blank"
-                class="nav-link"
-              >
-                <small>github</small>
-              </a>
-            </p>
-
-            <small
-              >Node music is an Implementation of the FFmpeg framework to stream
-              youtube videos as mp3.
+            <br />
+            <small v-if="project.stack.length">
+              <b> stack: </b> {{ project.stack.join(', ') }}
             </small>
           </div>
         </div>
@@ -266,7 +199,7 @@
             <small class="muted"><em>B.Tech Mechanical Engineering</em></small>
             <br />
             <small class="muted">2017 - Present</small> <br />
-            <small>Expected Graduation June 2021, CGPA - 7.8/10 </small>
+            <small>Expected Graduation June 2021, CGPA - 8.12/10 </small>
           </p>
           <p>
             Naidu +2 Science College, Bhubaneswar -
