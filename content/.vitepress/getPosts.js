@@ -31,8 +31,15 @@ exports.getPosts = function getPosts(asFeed = false) {
     .sort((a, b) => b.date.time - a.date.time);
 };
 
+exports.genMetaData = function genMetaData(getPosts) {
+  fs.writeFileSync(
+    path.resolve(__dirname, 'metadata.json'),
+    JSON.stringify(getPosts()),
+  );
+};
+
 function formatDate(date) {
-  if (!date instanceof Date) {
+  if (!(date instanceof Date)) {
     date = new Date(date);
   }
   date.setUTCHours(12);

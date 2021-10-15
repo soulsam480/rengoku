@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { useData } from 'vitepress';
-import { ref, toRef, watchEffect } from 'vue';
+import { ref, watchEffect } from 'vue';
 import type { Post } from '../types';
 import PostCards from './PostCards.vue';
-const { site: siteData } = useData();
-const posts = toRef(siteData.value.customData as { posts: Post[] }, 'posts');
+import Posts from '../../metadata.json';
+const posts = Posts as Post[];
 const showPosts = ref<Post[]>([]);
 const hash = ref<string | null>(null);
+
 watchEffect(() => {
   if (window.location.hash) {
     hash.value = window.location.hash.replace('#', '');
-    showPosts.value = posts.value
+    showPosts.value = posts
       .slice()
       .filter((el) => el.tags?.includes(window.location.hash.replace('#', '')));
   }

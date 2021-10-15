@@ -1,9 +1,7 @@
-import { HeadConfig, Route, SiteData } from 'vitepress';
-import { Ref, watchEffect } from 'vue';
-
-export function formatDate(
-  date: any | string,
-): { time: string; string: string } {
+export function formatDate(date: any | string): {
+  time: string;
+  string: string;
+} {
   if (!(date instanceof Date)) {
     date = new Date(date);
   }

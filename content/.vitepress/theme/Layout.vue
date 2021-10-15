@@ -7,5 +7,3 @@ import Page from './components/Page.vue';
   <Navbar />
   <Page />
 </template>
-
-<style lang="scss" scoped></style>

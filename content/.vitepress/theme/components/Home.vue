@@ -2,8 +2,11 @@
 import { useData } from 'vitepress';
 import type { Post } from '../types';
 import PostCards from './PostCards.vue';
-const { site: siteData, theme: themeConfig, frontmatter } = useData();
-const { posts } = siteData.value.customData as { posts: Post[] };
+const { theme: themeConfig, frontmatter } = useData();
+
+import Posts from '../../metadata.json';
+
+const posts: Post[] = Posts;
 </script>
 <template>
   <div>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRoute, useData } from 'vitepress';
 import { computed } from 'vue';
+
 const { theme: themeConfig, site } = useData();
 const route = useRoute();
 const isRouteActive = (path: string) => route.path === path;
@@ -12,6 +13,7 @@ const homeColors = computed(() => {
     return ['rengoku'];
   return ['rengoku-alt'];
 });
+
 const routes = computed(() => {
   if (themeConfig.value.nav.length > 3) {
     console.error('Maximum 3 nav bar elements are allowed!');

@@ -4,10 +4,10 @@ import { useRoute, useData } from 'vitepress';
 import VueCusdis from 'vue-cusdis';
 import { computed } from 'vue';
 import { formatDate } from '../utils';
+import posts from '../../metadata.json';
 
 const { site, frontmatter, theme } = useData();
 const route = useRoute();
-const posts = site.value.customData.posts;
 
 function findCurrentIndex(p: any) {
   return posts.findIndex((p: any) => p.href === route.path);

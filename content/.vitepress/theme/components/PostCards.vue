@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
 import type { PropType } from 'vue';
 import { truncateDesc } from '../utils';
 import type { Post } from '../types';

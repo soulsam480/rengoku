@@ -1,9 +1,10 @@
-// this is important as it's being used for listing blog articless
-const { getPosts } = require('./getPosts');
-/**
- * @type {import("vitepress").UserConfig<import("./theme/config").DefaultTheme.Config> }
- */
-module.exports = {
+const { defineConfig } = require('vitepress');
+
+const { genMetaData, getPosts } = require('./getPosts');
+
+genMetaData(getPosts);
+
+export default defineConfig({
   markdown: {
     anchor: { permalink: false },
     linkify: true,
@@ -11,9 +12,6 @@ module.exports = {
   },
   title: 'Rengoku',
   description: 'A vitepress theme inspired by Flame Hashira Kyōjurō Rengoku.',
-  customData: {
-    posts: getPosts(),
-  },
   themeConfig: {
     splitRow: true,
     feedOnHomepage: true,
@@ -33,8 +31,8 @@ module.exports = {
         text: 'Projects',
       },
     ],
-    cusdis_host: 'https://cusdis.com',
     comments: true,
+    cusdis_host: 'https://cusdis.com',
     cusdis_id: 'ab5ba4a4-9ec7-4c53-bc90-3c290bed5c85',
   },
-};
+});

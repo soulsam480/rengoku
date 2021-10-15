@@ -15,7 +15,8 @@
     "baseUrl": ".",
     "types": ["vite/client"],
     "lib": ["esnext", "dom", "dom.iterable"],
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "resolveJsonModule": true
   },
   "include": ["content/.vitepress/theme"],
   "exclude": ["node_modules", "types"]
