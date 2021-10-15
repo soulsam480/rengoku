@@ -9,7 +9,7 @@
   --code-line-height: 24px;
   --code-font-family: var(--font-family-mono);
   --code-font-size: 14px;
-  --code-inline-bg-color: #393e440d;
+  --code-inline-bg-color: #0000000d;
   --code-bg-color: #2e3137;
 }
 .rengoku {
@@ -34,10 +34,6 @@ a {
 .content {
   p {
     line-height: 1.7;
-    a {
-      color: var(--rengoku-alt) !important;
-      text-decoration: underline;
-    }
   }
   strong {
     letter-spacing: 0.8px !important;
@@ -50,6 +46,11 @@ a {
   h6 {
     font-weight: bold;
     letter-spacing: 0.8px !important;
+  }
+
+  a {
+    color: var(--rengoku-alt) !important;
+    text-decoration: underline;
   }
 }
 h1,

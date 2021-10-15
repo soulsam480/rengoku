@@ -2,8 +2,10 @@
 import type { PropType } from 'vue';
 import { truncateDesc } from '../utils';
 import type { Post } from '../types';
-import { useData } from 'vitepress';
+import { useData, useRouter } from 'vitepress';
 const { theme: themeConfig, frontmatter } = useData();
+
+const router = useRouter();
 
 defineProps({
   posts: {
@@ -25,7 +27,7 @@ defineProps({
           <img class="banner" :src="post.banner" :alt="post.title" />
         </div>
         <div :class="{ 'col-sm-6': post.banner }">
-          <p class="title">{{ post.title }}</p>
+          <p class="title" @click="router.go(post.href)">{{ post.title }}</p>
           <p v-if="post.description" class="desc">
             {{ truncateDesc(post.description) }}
           </p>
@@ -103,6 +105,7 @@ defineProps({
     .title {
       font-size: 22px;
       margin-bottom: 0;
+      cursor: pointer;
       @media (min-width: 768px) {
         font-size: 30px;
       }
