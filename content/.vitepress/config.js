@@ -1,4 +1,4 @@
-const { defineConfig } = require('vitepress');
+import { defineConfig } from 'vitepress';
 
 const { genMetaData, getPosts } = require('./getPosts');
 
