@@ -19,7 +19,11 @@ import { myGithub, projects } from '../constants';
               </a>
               <a
                 v-else
-                :href="myGithub + link.url"
+                :href="
+                  link.url.includes('github.com')
+                    ? link.url
+                    : myGithub + link.url
+                "
                 target="_blank"
                 class="nav-link"
                 ><small> {{ link.label }} </small>

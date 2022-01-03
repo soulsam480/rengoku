@@ -50,6 +50,10 @@ export const projects: Project[] = [
         url: 'https://beta.billbird.in',
         label: 'site',
       },
+      {
+        url: 'https://github.com/billbird-dev/platform',
+        label: 'github',
+      },
     ],
     stack: ['vue 3', 'typescript'],
   },

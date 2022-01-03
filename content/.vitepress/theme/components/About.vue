@@ -94,7 +94,7 @@ import { myGithub, projects } from '../constants';
             <p>
               <span>Tiaamo.com</span>
               <small class="muted"><em> &nbsp;Co-Founder</em></small> <br />
-              <small class="muted">MARCH 2018 - PRESENT</small>
+              <small class="muted">MARCH 2018 - MAY 2021</small>
               <a
                 href="https://noter.sambitsahoo.com"
                 target="_blank"

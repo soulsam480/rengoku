@@ -11,7 +11,7 @@ export default defineConfig({
     toc: { includeLevel: [1, 2, 3] },
   },
   title: 'Rengoku',
-  description: 'A vitepress theme inspired by Flame Hashira Kyōjurō Rengoku.',
+  description: 'Small engineer, vue, vite, react, node',
   themeConfig: {
     splitRow: true,
     feedOnHomepage: true,
@@ -34,5 +34,10 @@ export default defineConfig({
     comments: true,
     cusdis_host: 'https://cusdis.com',
     cusdis_id: 'ab5ba4a4-9ec7-4c53-bc90-3c290bed5c85',
+  },
+  vite: {
+    build: {
+      minify: 'terser',
+    },
   },
 });
