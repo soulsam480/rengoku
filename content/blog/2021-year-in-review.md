@@ -2,10 +2,10 @@
 title: 2021, Year in review
 description: Looking back at 2021 and reflecting on learnings, challenges, achievements.
 author:
-  name: Sambit
+  name: sambit sahoo
   github: soulsam480
 date: 2022-01-15
-banner: /group-5.svg
+banner: /group-5-1-.svg
 ---
 Compared to 2020, 2021 was pretty happening for me. I was really busy at work pretty much the entire year. It's not like I only worked, I also learned a lot. I know that we're already 15 days into 2022 and it's really late for review kind of thing but here we are. 
 
