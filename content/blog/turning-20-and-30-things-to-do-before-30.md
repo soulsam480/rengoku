@@ -1,10 +1,10 @@
 ---
-title: Turning 20 and 30 things to do before 30.
+title: Turning 20 and 30 things to do before 30
 description: My 30 under 30 List.
+author:
+  name: Sambit Sahoo
+  github: soulsam480
 date: 2019-10-03
-author: 
-   name: Sambit Sahoo
-   github: soulsam480 
 banner: /forbes-30under30-logo.jpg
 ---
 It's my 20th birthday. I'm a bit excited and anxious about the future also. It feels great to be an adult but it also makes me worry about the responsibilities lying ahead. In the last few years life has taught me many great things, it taught me to believe in myself, to learn from my failures and moreover to be a good person. I always feel that i'm too lucky to have amazing people in my life, my parents, Family, encouraging, funny and kind FRIENDS, good mentors and everybody else. In the struggle of life, i have learned to thrive thanks to the support of these guys.
