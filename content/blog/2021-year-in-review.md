@@ -19,4 +19,4 @@ After coming back, We expanded the Team and started building the product in a mo
 
 About difficulties, I didn't face any serious challenges apart from technical stuff at work and personal projects. Apart from some personal issues, fortunately It was a smooth year. My greatest achievement for the year would be learning many things and also helping the team at Evident ship the product in just 3 months. I feel really proud of the team and myself too. I found out that, challenges made me more efficient at learning things and I hope to face more challenges. Ah, I forgot, We also made BillBird [open-source](https://github.com/billbird-dev/platform) after building it for more that a year. I felt it was time to let it go, as I never had time to maintain it properly.
 
-
+For 2022, It was not a good start as I got Covid in the first week, LOL. Let's see what happens next. I'm hoping to learn more in the React/Svelte ecosystem and Backend Dev. I'm also working on a really cool product which is not open-source yet. Anyways, thanks for reading and happy new year, Peace ☮️
