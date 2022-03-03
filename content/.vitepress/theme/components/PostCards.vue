@@ -27,7 +27,7 @@ defineProps({
           <img class="banner" :src="post.banner" :alt="post.title" />
         </div>
         <div :class="{ 'col-sm-6': post.banner }">
-          <p class="title" @click="router.go(post.href)">{{ post.title }}</p>
+          <a class="title" :href="post.href">{{ post.title }}</a>
           <p v-if="post.description" class="desc">
             {{ truncateDesc(post.description) }}
           </p>

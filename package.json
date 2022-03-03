@@ -11,10 +11,10 @@
   },
   "devDependencies": {
     "gray-matter": "^4.0.3",
-    "sass": "^1.45.2",
-    "typescript": "^4.5.4",
-    "vitepress": "^0.20.10",
-    "vue": "^3.2.26"
+    "sass": "^1.49.9",
+    "typescript": "^4.6.2",
+    "vitepress": "^0.22.3",
+    "vue": "^3.2.31"
   },
   "engines": {
     "node": ">=12.0.0"
