@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vitepress dev content",
     "build": "vitepress build content",
-    "serve": "vitepress serve content"
+    "serve": "vitepress serve content --port 5012"
   },
   "devDependencies": {
     "gray-matter": "^4.0.3",

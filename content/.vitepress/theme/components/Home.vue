@@ -1,10 +1,9 @@
 <script setup lang="ts">
+import Posts from '../../metadata.json';
 import { useData } from 'vitepress';
 import type { Post } from '../types';
 import PostCards from './PostCards.vue';
 const { theme: themeConfig, frontmatter } = useData();
-
-import Posts from '../../metadata.json';
 
 const posts: Post[] = Posts;
 </script>
@@ -14,7 +13,11 @@ const posts: Post[] = Posts;
       <Content />
     </article>
     <div class="hero" v-else>
-      <img class="landing-image" :src="frontmatter.heroImage" />
+      <img
+        class="landing-image"
+        :src="frontmatter.heroImage"
+        :alt="frontmatter.heroImage"
+      />
       <blockquote class="quote">
         {{ frontmatter.heroQuote }}
         <span class="rengoku-alt"> {{ frontmatter.heroName }} </span>

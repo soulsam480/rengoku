@@ -36,6 +36,10 @@ export default defineConfig({
     cusdis_id: 'ab5ba4a4-9ec7-4c53-bc90-3c290bed5c85',
   },
   vite: {
+    define: {
+      __VUE_OPTIONS_API__: false,
+    },
+    minify: 'terser',
     build: {
       minify: 'terser',
     },
