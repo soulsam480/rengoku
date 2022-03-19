@@ -83,7 +83,6 @@ defineProps({
   max-width: 100%;
   .banner {
     @media (max-width: 768px) {
-      margin-bottom: 0 !important;
       width: 90% !important;
     }
   }
