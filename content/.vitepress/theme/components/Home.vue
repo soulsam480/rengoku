@@ -13,11 +13,11 @@ const posts: Post[] = Posts;
       <Content />
     </article>
     <div class="hero" v-else>
-      <img
+      <!-- <img
         class="landing-image"
         :src="frontmatter.heroImage"
         :alt="frontmatter.heroImage"
-      />
+      /> -->
       <blockquote class="quote">
         {{ frontmatter.heroQuote }}
         <span class="rengoku-alt"> {{ frontmatter.heroName }} </span>
@@ -25,7 +25,7 @@ const posts: Post[] = Posts;
     </div>
     <div v-if="themeConfig.feedOnHomepage">
       <hr v-if="frontmatter.hero" class="feed-splitter" />
-      <h1 v-if="frontmatter.hero" class="home-feed-header">Blog articles</h1>
+      <!-- <h1 v-if="frontmatter.hero" class="home-feed-header">Blog articles</h1> -->
       <PostCards :posts="posts.slice(0, 4)" />
     </div>
     <footer class="license rengoku-alt" v-if="!themeConfig.feedOnHomepage">
