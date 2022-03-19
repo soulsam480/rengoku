@@ -39,7 +39,6 @@ export default defineConfig({
     define: {
       __VUE_OPTIONS_API__: false,
     },
-    minify: 'terser',
     build: {
       minify: 'terser',
     },

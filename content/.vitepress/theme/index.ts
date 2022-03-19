@@ -5,6 +5,7 @@ import Layout from './Layout.vue';
 import NotFound from './NotFound.vue';
 import About from './components/About.vue';
 import Projects from './components/Projects.vue';
+import Tags from './components/Tags.vue';
 
 const theme: Theme = {
   Layout,
@@ -12,6 +13,7 @@ const theme: Theme = {
   enhanceApp: ({ app }) => {
     app.component('About', About);
     app.component('Projects', Projects);
+    app.component('Tags', Tags);
   },
 };
 
