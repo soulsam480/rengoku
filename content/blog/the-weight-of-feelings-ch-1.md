@@ -16,4 +16,4 @@ I arrived in Bangalore today. It was a good journey. Wait, can we call a 2 hr fl
 
  My second year wasn't that good academically. I was busy saving the company with my partner. When our third year started, all these company stuff went a bit lighter and I met her.
 
-This piece was written on 4th of July 2022.
+This piece was written on 4th of July 2022. I don't have time to write eveything at once, so there will be more chapters to this. Thanks for reading.
