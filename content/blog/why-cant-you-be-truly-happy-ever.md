@@ -1,0 +1,16 @@
+---
+title: Why can't you be truly happy ever.
+description: A small writing on what I feel about being truly happy in life.
+author:
+  name: soulsam480
+  github: soulsam480
+date: 2022-08-29
+banner: /why-you-won-t-be-tryly-happy-ever.svg
+---
+Ever since my childhood, I've heard everyone say do what you like. Follow your passion. Doing what you like every day will make you happy. When you're young, all this pep talk will fascinate you for sure. Seeing all these big names bragging about how they are happy following their passion will motivate you to cultivate one for yourself too. As a child, I wanted to become almost everything. I liked rockets and jets, so wanted to be an astronaut. I also liked mixing up expired medicines and imitating a scientist. I also liked trains, engines, computers and all kinds of things. During those days the thought of being something in the future made me happy. I feel that's the only time I've been closest to what true happiness is.
+
+When I grew up and went to school, I was told that being the best at academics will make me happy. I studied well under strict guidance, and somehow I achieved the first spot. After doing all this hard work and getting the expected results, I won't say I was happy. I think it only boosted my ego and brought my parents some recognition. I went to college and it's the same story again. Do this, do that and you'll be happy. What does it feel to be happy? At that point in my life, I never asked this question to myself or anyone. I just did my best at what I was told to do or what others were doing.
+
+During my graduation, the definition of happiness changed. Getting a good job on campus or going to a prestigious university for a master's after four years will make you happy. I've seen many students going gaga over these things, preparing for master's exams right from their second year. I also did all those things, even then, I never found myself being content with life. After some time, I found some form of satisfaction in programming. I thought coding for 14-15 hrs a day will make me happy, but unknowingly that made me extremely egoist and lonely. I just wanted to be happy. 
+
+These days on my way to the office, I see all kinds of people, Everyone is running for something. Are they happy with what they are doing? Do they go to sleep every day with satisfaction? How do they feel when they achieve something that they've longed for so long? I think about all these questions. In answer to these, I feel nobody can ever be happy. Even if you achieve something, there is always something after that. We as humans, never stop asking for things. It can be some physical thing, feelings of someone, appreciation of seniors, anything. Even on our deathbed, we'll wish for a painless death. Every day after work, I think about how I could have done more, how I could've written a really good PR, and how I could have figured this bug out by myself. Even though I know, I've been through this thought process countless times, I just can't stop expecting more. What's true happiness? This cycle will never end and I'll never be happy.
