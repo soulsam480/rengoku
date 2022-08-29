@@ -2,9 +2,10 @@
 title: Why can't you be truly happy ever.
 description: A small writing on what I feel about being truly happy in life.
 author:
-  name: sousam480
+  name: soulsam480
   github: soulsam480
 date: 2022-08-29
+banner: /why-you-won-t-be-tryly-happy-ever.svg
 ---
 Ever since my childhood, I've heard everyone say do what you like. Follow your passion. Doing what you like every day will make you happy. When you're young, all this pep talk will fascinate you for sure. Seeing all these big names bragging about how they are happy following their passion will motivate you to cultivate one for yourself too. As a child, I wanted to become almost everything. I liked rockets and jets, so wanted to be an astronaut. I also liked mixing up expired medicines and imitating a scientist. I also liked trains, engines, computers and all kinds of things. During those days the thought of being something in the future made me happy. I feel that's the only time I've been closest to what true happiness is.
 
