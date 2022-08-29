@@ -64,8 +64,10 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
   <br />
   <div v-if="theme.comments">
     <h3 class="comments">Comments</h3>
+
     <ClientOnly>
       <VueCusdis
+        :key="route.path"
         :attrs="{
           host: theme.cusdis_host || 'https://cusdis.com',
           appId: theme.cusdis_id,
