@@ -2,7 +2,7 @@
 title: Why can't you be truly happy ever.
 description: A small writing on what I feel about being truly happy in life.
 author:
-  name: Sambit Sahoo
+  name: sousam480
   github: soulsam480
 date: 2022-08-29
 ---
