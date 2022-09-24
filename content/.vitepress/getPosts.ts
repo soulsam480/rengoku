@@ -1,14 +1,17 @@
-const fs = require('fs');
-const path = require('path');
-const matter = require('gray-matter');
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
-exports.getPosts = function getPosts(asFeed = false) {
+export function getPosts() {
   const postDir = path.resolve(__dirname, '../blog');
+
   return fs
     .readdirSync(postDir)
     .map((file) => {
       const src = fs.readFileSync(path.join(postDir, file), 'utf-8');
-      const { data, content } = matter(src);
+
+      const { data } = matter(src);
+
       if (!file.split('.').includes('index')) {
         const post = {
           title: data.title,
@@ -18,31 +21,29 @@ exports.getPosts = function getPosts(asFeed = false) {
           banner: data.banner,
           tags: (data.tags && data.tags.split(',')) || [],
         };
-        if (asFeed) {
-          // only attach these when building the RSS feed to avoid bloating the
-          // client bundle size
-          post.data = data;
-        }
+
         return post;
       }
       return null;
     })
-    .filter((el) => el !== null)
-    .sort((a, b) => b.date.time - a.date.time);
-};
+    .filter(Boolean)
+    .sort((a, b) => (b as any).date.time - (a as any).date.time);
+}
 
-exports.genMetaData = function genMetaData(getPosts) {
+export function genMetaData(get: typeof getPosts) {
   fs.writeFileSync(
     path.resolve(__dirname, 'metadata.json'),
-    JSON.stringify(getPosts()),
+    JSON.stringify(get()),
   );
-};
+}
 
-function formatDate(date) {
+function formatDate(date: string | Date) {
   if (!(date instanceof Date)) {
     date = new Date(date);
   }
+
   date.setUTCHours(12);
+
   return {
     time: date,
     string: date.toLocaleDateString('en-US', {

@@ -2,6 +2,7 @@ export type PostDate = {
   time?: string;
   string?: string;
 };
+
 export type Post = {
   title?: string;
   href?: string;

@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --code-line-height: 24px;
+  --code-font-size: 14px;
+  --code-inline-bg-color: #0000000d;
+  --code-bg-color: #2e3137;
+}
+
+p img {
+  margin: 0px auto;
+}
+
+.prose hr {
+  border-top: 1px solid #e5e7eb;
+}
+
+.link {
+  @apply transition-all duration-100 ease-in-out border-b border-gray-700 hover:text-gray-700 hover:border-b-2;
+}
