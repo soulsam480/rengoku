@@ -64,7 +64,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
   </article>
 
   <div class="flex flex-col gap-2">
-    <div v-if="nextPost" class="next">
+    <div v-if="nextPost" class="text-right">
       <p class="text-sm text-gray-800">Next</p>
 
       <h3>
@@ -74,7 +74,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
 
     <hr />
 
-    <div v-if="prevPost" class="text-right">
+    <div v-if="prevPost" class="text-left">
       <p class="text-sm text-gray-800">Previous</p>
       <div>
         <a class="link" :href="prevPost.href">{{ prevPost.title }}</a>
@@ -82,7 +82,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
     </div>
   </div>
 
-  <div class="mt-3">
+  <div class="mt-5">
     <h3 class="text-lg font-semibold">Comments</h3>
 
     <ClientOnly>
