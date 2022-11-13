@@ -1,5 +1,5 @@
 ---
-title: Impulsion is often unnecessary and negative
+title: Impulsion is often unnecessary and negative.
 description: A small write up on why being impulsive is often unnecessary and
   negative. Reflections on my struggles with the same.
 author:
