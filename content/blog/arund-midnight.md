@@ -1,5 +1,5 @@
 ---
-title: Arund midnight
+title: Around midnight
 description: I don't know why I'm writing this at midnight on a hot summer day.
   I don't have an objective. I just felt like writing something. But to be
   honest, I had something in mind before doing this. Something that led me to
