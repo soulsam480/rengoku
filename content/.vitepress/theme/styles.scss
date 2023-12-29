@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --code-line-height: 24px;
-  --code-font-size: 14px;
-  --code-inline-bg-color: #0000000d;
-  --code-bg-color: #2e3137;
-}
-
 p img {
   margin: 0px auto;
 }
@@ -18,5 +11,13 @@ p img {
 }
 
 .link {
-  @apply transition-all duration-100 ease-in-out border-b border-gray-700 hover:text-gray-700 hover:border-b-2;
+  @apply transition-all duration-200 ease-in-out border-b font-semibold border-gray-200 hover:border-b-[2px];
+}
+
+.primary-text {
+  @apply text-gray-300;
+}
+
+.secondary-text {
+  @apply text-gray-400;
 }

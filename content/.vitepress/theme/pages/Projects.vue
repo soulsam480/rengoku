@@ -14,7 +14,7 @@ const myGithub = 'https://github.com/soulsam480';
         class="flex flex-col gap-1"
       >
         <div class="flex items-end gap-2">
-          <h4 class="text-base">{{ project.title }}</h4>
+          <h4 class="text-base font-semibold primary-text">{{ project.title }}</h4>
 
           <template v-for="link in project.links" :key="link.url">
             <a
@@ -38,11 +38,11 @@ const myGithub = 'https://github.com/soulsam480';
           </template>
         </div>
 
-        <h5 class="text-sm">
+        <h5 class="text-sm secondary-text">
           {{ project.desc }}
         </h5>
 
-        <h5 v-if="project.stack.length" class="text-xs">
+        <h5 v-if="project.stack.length" class="text-xs secondary-text">
           stack: {{ project.stack.join(', ') }}
         </h5>
       </div>

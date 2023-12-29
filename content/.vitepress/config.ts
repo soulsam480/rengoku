@@ -4,6 +4,7 @@ import { genMetaData, getPosts } from './getPosts';
 genMetaData(getPosts);
 
 export default defineConfig({
+  appearance: 'force-dark',
   markdown: {
     anchor: {
       level: 0,
@@ -11,8 +12,14 @@ export default defineConfig({
         //
       },
     },
+
     linkify: true,
+    typographer: true,
     toc: { level: [1, 2, 3] },
+    theme: {
+      light: 'vitesse-light',
+      dark: 'vitesse-dark',
+    },
   },
   title: 'Sambit Sahoo',
   description: 'Small engineer, vue, vite, react, node',
@@ -21,7 +28,7 @@ export default defineConfig({
       __VUE_OPTIONS_API__: false,
     },
     build: {
-      minify: 'terser',
+      minify: 'esbuild',
     },
   },
 });

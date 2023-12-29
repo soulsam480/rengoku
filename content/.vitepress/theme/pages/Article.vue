@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { useRoute, useData } from 'vitepress';
+import { useData, useRoute } from 'vitepress';
+import { computed } from 'vue';
 //@ts-ignore
 import VueCusdis from 'vue-cusdis';
-import { computed } from 'vue';
-import { formatDate } from '../utils';
 import posts from '../../metadata.json';
+import { formatDate } from '../utils';
 
 const { frontmatter } = useData();
 const route = useRoute();
@@ -20,12 +20,12 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
 <template>
   <article class="flex flex-col gap-4">
     <header class="flex flex-col gap-2 pt-6 text-left sm:text-center xl:pb-10">
-      <p class="text-gray-800" v-if="frontmatter.date">
+      <p class="secondary-text" v-if="frontmatter.date">
         {{ formatDate(frontmatter.date).string }}
       </p>
 
       <h1
-        class="text-3xl font-semibold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14"
+        class="text-3xl font-semibold leading-9 tracking-tight sm:text-4xl sm:leading-10 md:text-5xl md:leading-14"
       >
         {{ frontmatter.title }}
       </h1>
@@ -50,6 +50,9 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
       :alt="frontmatter.title"
     />
 
+    <h3 v-if="frontmatter.banner_title" :title="frontmatter.banner_title" class="text-center secondary-text text-sm italic">{{ frontmatter.banner_title }}</h3>
+
+
     <div v-if="frontmatter.tags" class="flex flex-wrap items-center gap-2">
       <span class="tag" v-for="tag in frontmatter.tags.split(',')" :key="tag">
         <a
@@ -60,12 +63,12 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
       </span>
     </div>
 
-    <Content class="pb-8 prose max-w-none" />
+    <Content class="pb-8 prose max-w-none dark:prose-invert" />
   </article>
 
   <div class="flex flex-col gap-2">
     <div v-if="nextPost" class="text-right">
-      <p class="text-sm text-gray-800">Next</p>
+      <p class="text-sm secondary-text">Next</p>
 
       <h3>
         <a class="link" :href="nextPost.href">{{ nextPost.title }}</a>
@@ -75,7 +78,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
     <hr />
 
     <div v-if="prevPost" class="text-left">
-      <p class="text-sm text-gray-800">Previous</p>
+      <p class="text-sm secondary-text">Previous</p>
       <div>
         <a class="link" :href="prevPost.href">{{ prevPost.title }}</a>
       </div>
@@ -94,6 +97,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
           pageId: route.path,
           pageTitle: frontmatter.title,
           pageUrl: `https://sambitsahoo.com${route.path}`,
+          theme:'dark'
         }"
       />
     </ClientOnly>

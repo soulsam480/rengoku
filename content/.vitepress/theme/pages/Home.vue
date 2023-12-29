@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Post } from '../types';
 import Posts from '../../metadata.json';
+import type { Post } from '../types';
 import { truncateDesc } from '../utils';
 
 const posts: Post[] = Posts;
@@ -92,11 +92,11 @@ const social_links = [
             }}</a>
           </h3>
 
-          <h4 class="text-sm max-w-[90%] text-gray-800">
+          <h4 class="text-sm max-w-[90%] secondary-text">
             {{ work.what }}
           </h4>
 
-          <h4 class="text-xs text-gray-800">
+          <h4 class="text-xs secondary-text">
             {{ work.position }} \\ {{ work.range }}
           </h4>
         </div>
@@ -124,14 +124,14 @@ const social_links = [
         class="flex flex-col gap-1"
         :key="post.href"
       >
-        <div class="text-sm text-gray-700">{{ post.date?.string }}</div>
+        <div class="text-sm primary-text">{{ post.date?.string }}</div>
         <h3>
           <a :href="post.href" class="text-lg font-semibold link">
             {{ post.title }}
           </a>
         </h3>
 
-        <p v-if="post.description" class="text-sm text-gray-800">
+        <p v-if="post.description" class="text-sm secondary-text">
           {{ truncateDesc(post.description) }}
         </p>
       </div>
