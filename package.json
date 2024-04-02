@@ -27,6 +27,7 @@
     "node": ">=12.0.0"
   },
   "dependencies": {
+    "@giscus/vue": "^3.0.0",
     "vue-cusdis": "^2.1.1"
   }
 }

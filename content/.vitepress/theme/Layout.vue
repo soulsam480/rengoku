@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { Content, useRoute } from 'vitepress';
-import { computed } from 'vue';
-import NotFound from './NotFound.vue';
-import Home from './pages/Home.vue';
-import Article from './pages/Article.vue';
-import ArticleListing from './pages/ArticleListing.vue';
+import { Content, useRoute } from "vitepress";
+import { computed } from "vue";
+import NotFound from "./NotFound.vue";
+import Home from "./pages/Home.vue";
+import Article from "./pages/Article.vue";
+import ArticleListing from "./pages/ArticleListing.vue";
 
 const route = useRoute();
 
-const page_is = computed(() => route.path.replace(/index.html$/, ''));
+const page_is = computed(() => route.path.replace(/index.html$/, ""));
 const is_not_found = computed(() => route.component === NotFound);
 </script>
 
@@ -23,6 +23,9 @@ const is_not_found = computed(() => route.component === NotFound);
         <div class="flex items-center gap-2 text-sm leading-5">
           <a class="text-sm link" href="/blog/index.html" aria-label="blog">
             blog
+          </a>
+          <a class="text-sm link" href="/feed.html" aria-label="blog">
+            Train of thoughts
           </a>
           <a class="text-sm link" href="/projects.html" aria-label="projects">
             projects
