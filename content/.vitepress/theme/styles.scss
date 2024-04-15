@@ -10,14 +10,22 @@ p img {
   border-top: 1px solid #e5e7eb;
 }
 
-.link {
-  @apply transition-all duration-200 ease-in-out border-b font-semibold border-gray-200 hover:border-b-[2px];
-}
+@layer utilities {
+  .link {
+    color: var(--vp-c-text-1);
+    border-color: var(--vp-c-text-1);
+    @apply transition-all duration-200 ease-in-out border-b font-semibold  hover:border-b-[2px];
+  }
 
-.primary-text {
-  @apply text-gray-300;
-}
+  .text-brand-1 {
+    color: var(--vp-c-text-1);
+  }
 
-.secondary-text {
-  @apply text-gray-400;
+  .text-brand-2 {
+    color: var(--vp-c-text-2);
+  }
+
+  .text-brand-3 {
+    color: var(--vp-c-text-3);
+  }
 }

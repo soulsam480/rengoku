@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { projects } from '../constants';
+import { projects } from "../constants";
 
-const myGithub = 'https://github.com/soulsam480';
+const MY_GITHUB = "https://github.com/soulsam480";
 </script>
 <template>
   <div class="flex flex-col gap-3">
@@ -14,7 +14,9 @@ const myGithub = 'https://github.com/soulsam480';
         class="flex flex-col gap-1"
       >
         <div class="flex items-end gap-2">
-          <h4 class="text-base font-semibold primary-text">{{ project.title }}</h4>
+          <h4 class="text-base font-semibold text-brand-1">
+            {{ project.title }}
+          </h4>
 
           <template v-for="link in project.links" :key="link.url">
             <a
@@ -29,7 +31,9 @@ const myGithub = 'https://github.com/soulsam480';
             <a
               v-else
               :href="
-                link.url.includes('github.com') ? link.url : myGithub + link.url
+                link.url.includes('github.com')
+                  ? link.url
+                  : MY_GITHUB + link.url
               "
               target="_blank"
               class="link text-sm"
@@ -38,18 +42,21 @@ const myGithub = 'https://github.com/soulsam480';
           </template>
         </div>
 
-        <h5 class="text-sm secondary-text">
+        <h5 class="text-sm text-brand-1">
           {{ project.desc }}
         </h5>
 
-        <h5 v-if="project.stack.length" class="text-xs secondary-text">
-          stack: {{ project.stack.join(', ') }}
+        <h5 v-if="project.stack.length" class="text-xs text-brand-2">
+          stack: {{ project.stack.join(", ") }}
         </h5>
       </div>
     </div>
 
-    <a target="_blank" class="mt-4" href="https://github.com/soulsam480"
-      ><span><u>Explore more projects on GitHub</u></span></a
-    >
+    <a
+      target="_blank"
+      class="mt-4 link max-w-max"
+      href="https://github.com/soulsam480?tab=repositories&type=source"
+      >Explore more projects on github
+    </a>
   </div>
 </template>

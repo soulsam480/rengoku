@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { useData, useRoute } from 'vitepress';
-import { computed } from 'vue';
+import { useData, useRoute } from "vitepress";
+import { computed } from "vue";
 //@ts-ignore
-import VueCusdis from 'vue-cusdis';
-import posts from '../../metadata.json';
-import { formatDate } from '../utils';
+import VueCusdis from "vue-cusdis";
+import { data as posts } from "../posts.data";
+import { formatDate } from "../utils";
 
-const { frontmatter } = useData();
+const { frontmatter, isDark } = useData();
 const route = useRoute();
 
 function findCurrentIndex() {
-  return posts.findIndex((p: any) => p.href === route.path);
+  return posts.findIndex((p) => p.href === route.path);
 }
 
 // use the customData date which contains pre-resolved date info
@@ -20,7 +20,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
 <template>
   <article class="flex flex-col gap-4">
     <header class="flex flex-col gap-2 pt-6 text-left sm:text-center xl:pb-10">
-      <p class="secondary-text" v-if="frontmatter.date">
+      <p class="text-brand-2" v-if="frontmatter.date">
         {{ formatDate(frontmatter.date).string }}
       </p>
 
@@ -50,8 +50,13 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
       :alt="frontmatter.title"
     />
 
-    <h3 v-if="frontmatter.banner_title" :title="frontmatter.banner_title" class="text-center secondary-text text-sm italic">{{ frontmatter.banner_title }}</h3>
-
+    <h3
+      v-if="frontmatter.banner_title"
+      :title="frontmatter.banner_title"
+      class="text-center text-brand-2 text-sm italic"
+    >
+      {{ frontmatter.banner_title }}
+    </h3>
 
     <div v-if="frontmatter.tags" class="flex flex-wrap items-center gap-2">
       <span class="tag" v-for="tag in frontmatter.tags.split(',')" :key="tag">
@@ -63,12 +68,12 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
       </span>
     </div>
 
-    <Content class="pb-8 prose max-w-none dark:prose-invert" />
+    <Content class="pb-8 prose max-w-none dark:prose-invert prose-neutral" />
   </article>
 
   <div class="flex flex-col gap-2">
     <div v-if="nextPost" class="text-right">
-      <p class="text-sm secondary-text">Next</p>
+      <p class="text-sm text-brand-2">Next</p>
 
       <h3>
         <a class="link" :href="nextPost.href">{{ nextPost.title }}</a>
@@ -78,7 +83,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
     <hr />
 
     <div v-if="prevPost" class="text-left">
-      <p class="text-sm secondary-text">Previous</p>
+      <p class="text-sm text-brand-2">Previous</p>
       <div>
         <a class="link" :href="prevPost.href">{{ prevPost.title }}</a>
       </div>
@@ -97,7 +102,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1]);
           pageId: route.path,
           pageTitle: frontmatter.title,
           pageUrl: `https://sambitsahoo.com${route.path}`,
-          theme:'dark'
+          theme: isDark ? 'dark' : undefined,
         }"
       />
     </ClientOnly>

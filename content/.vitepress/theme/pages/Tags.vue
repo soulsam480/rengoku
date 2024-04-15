@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue';
-import type { Post } from '../types';
-import Posts from '../../metadata.json';
-import { truncateDesc } from '../utils';
+import { ref, watchEffect } from "vue";
+import type { Post } from "../types";
+import { truncateDesc } from "../utils";
+import { data as posts } from "../posts.data";
 
-const posts = Posts as Post[];
 const showPosts = ref<Post[]>([]);
 const hash = ref<string | null>(null);
 
 watchEffect(() => {
   if (window.location.hash) {
-    hash.value = window.location.hash.replace('#', '');
+    hash.value = window.location.hash.replace("#", "");
 
     showPosts.value = posts
       .slice()
-      .filter((el) => el.tags?.includes(window.location.hash.replace('#', '')));
+      .filter((el) => el.tags?.includes(window.location.hash.replace("#", "")));
   }
 });
 </script>
@@ -30,14 +29,14 @@ watchEffect(() => {
         class="flex flex-col gap-1"
         :key="post.href"
       >
-        <div class="text-sm text-gray-700">{{ post.date?.string }}</div>
+        <div class="text-sm text-brand-1">{{ post.date?.string }}</div>
         <h3>
           <a :href="post.href" class="text-lg font-semibold link">
             {{ post.title }}
           </a>
         </h3>
 
-        <p v-if="post.description" class="text-sm text-gray-800">
+        <p v-if="post.description" class="text-sm text-brand-2">
           {{ truncateDesc(post.description) }}
         </p>
       </div>

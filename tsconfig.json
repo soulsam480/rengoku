@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
+    "module": "ESNext",
     "allowJs": true,
     "strict": true,
     "jsx": "preserve",
-    "moduleResolution": "node",
-    "resolveJsonModule": true
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "noEmit": true
   },
   "include": ["./content/.vitepress/**/*"]
 }

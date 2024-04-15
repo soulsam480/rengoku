@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import Giscus from "@giscus/vue";
+import { useData } from "vitepress";
 import { onBeforeMount, ref } from "vue";
+
+const { isDark } = useData();
 
 const hasLoaded = ref(false);
 
@@ -30,7 +33,7 @@ onBeforeMount(() => {
     reactions-enabled="0"
     emit-metadata="1"
     input-position="top"
-    theme="dark_dimmed"
+    :theme="isDark ? 'dark_dimmed' : 'light'"
     lang="en"
     loading="eager"
     term="14"

@@ -1,50 +1,47 @@
 <script setup lang="ts">
-import Posts from '../../metadata.json';
-import type { Post } from '../types';
-import { truncateDesc } from '../utils';
+import { data as posts } from "../posts.data";
+import { truncateDesc } from "../utils";
 
-const posts: Post[] = Posts;
-
-const previous_work = [
+const PREVIOUS_WORK = [
   {
-    name: 'Evidev LLP',
-    position: 'Frontend Developer',
-    range: '2020 DEC - 2022 MAR',
-    what: 'Worked in Fintech Domain and lead the Frontend team for a while',
-    link: 'https://evidev.tech/',
+    name: "Evidev LLP",
+    position: "Frontend Developer",
+    range: "2020 DEC - 2022 MAR",
+    what: "Worked in Fintech Domain and lead the Frontend team for a while",
+    link: "https://evidev.tech/",
   },
   {
-    name: 'Public Incubator Inc',
-    position: 'Frontend Intern',
-    range: '2020 MAR - 2020 APR',
-    what: 'Primarily worked on the Landing Page of the company.',
-    link: 'https://www.publicincubator.com/',
+    name: "Public Incubator Inc",
+    position: "Frontend Intern",
+    range: "2020 MAR - 2020 APR",
+    what: "Primarily worked on the Landing Page of the company.",
+    link: "https://www.publicincubator.com/",
   },
   {
-    name: 'Tiaamo.com',
-    position: 'Co-Founder',
-    range: '2018 MAR - 2021 MAY',
-    what: 'Co-Founded the company and built the E-commerce platform.',
-    link: 'https://github.com/tiaamoclothing',
+    name: "Tiaamo.com",
+    position: "Co-Founder",
+    range: "2018 MAR - 2021 MAY",
+    what: "Co-Founded the company and built the E-commerce platform.",
+    link: "https://github.com/tiaamoclothing",
   },
 ];
 
-const social_links = [
+const SOCIAL_LINKS = [
   {
-    link: 'mailto:sambitsahoojs@gmail.com',
-    label: 'sambitsahoojs@gmail.com',
+    link: "mailto:soulsam480@hotmail.com",
+    label: "soulsam480@hotmail.com",
   },
   {
-    link: 'https://github.com/soulsam480',
-    label: 'github',
+    link: "https://github.com/soulsam480",
+    label: "github",
   },
   {
-    link: 'https://www.linkedin.com/in/sambit-sahoo-6a3859190/',
-    label: 'linkedin',
+    link: "https://www.linkedin.com/in/sambit-sahoo-6a3859190/",
+    label: "linkedin",
   },
   {
-    link: 'https://twitter.com/sambitsahoojs',
-    label: 'twitter',
+    link: "https://elk.zone/fosstodon.org/@zorozuro",
+    label: "mastodom",
   },
 ];
 </script>
@@ -52,26 +49,15 @@ const social_links = [
 <template>
   <div class="flex flex-col gap-5">
     <div>
-      <h1 class="text-lg">Hello,</h1>
-      <div class="text-base">
-        This is sambit. These days I'm working at
+      <h1 class="text-lg">hello,</h1>
+
+      <div class="text-base lowercase">
+        this is sambit. Been working at
         <a target="_blank" href="https://revenuehero.io" class="link"
           >RevenueHero</a
         >
-        on many random things. Don't have much time after work to finalize
-        <a
-          target="_blank"
-          href="https://github.com/soulsam480/mirai"
-          class="link"
-          >Mirai</a
-        >. But I'm learning a lot at work. It's been a mix of hard-core React,
-        TypeScript, and REST APIs in Node.js.
-
-        <br />
-        <br />
-
-        Also moved to Bangalore. It's a super cool city. Everyone is busy doing
-        something. That's it. I also occasionally write on
+        since the last two years. It's been a journey full of learning and fun.
+        I rarely write on
         <a href="/blog/index.html" class="link">my blog</a>. Thanks for
         visiting.
       </div>
@@ -83,7 +69,7 @@ const social_links = [
       <div class="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-2">
         <div
           class="flex flex-col gap-0.5"
-          v-for="work in previous_work"
+          v-for="work in PREVIOUS_WORK"
           :key="work.name"
         >
           <h3 class="text-base">
@@ -92,11 +78,11 @@ const social_links = [
             }}</a>
           </h3>
 
-          <h4 class="text-sm max-w-[90%] secondary-text">
+          <h4 class="text-sm max-w-[90%] text-brand-1">
             {{ work.what }}
           </h4>
 
-          <h4 class="text-xs secondary-text">
+          <h4 class="text-xs text-brand-2">
             {{ work.position }} \\ {{ work.range }}
           </h4>
         </div>
@@ -106,10 +92,22 @@ const social_links = [
     <div class="flex flex-col gap-2 mt-10">
       <div class="text-lg font-semibold">Reach me at</div>
 
+      <div class="text-xs text-brand-1">
+        I'm not active on the following channels except email. To see what I'm
+        upto right now, check out my
+        <a
+          class="link"
+          rel="noopener"
+          target="_blank"
+          href="https://github.com/soulsam480"
+          >github profile</a
+        >
+      </div>
+
       <div class="flex flex-wrap items-center gap-2">
         <a
           target="_blank"
-          v-for="social in social_links"
+          v-for="social in SOCIAL_LINKS"
           class="text-sm sm:text-base link"
           :href="social.link"
           >{{ social.label }}</a
@@ -124,14 +122,14 @@ const social_links = [
         class="flex flex-col gap-1"
         :key="post.href"
       >
-        <div class="text-sm primary-text">{{ post.date?.string }}</div>
+        <div class="text-sm text-brand-1">{{ post.date?.string }}</div>
         <h3>
           <a :href="post.href" class="text-lg font-semibold link">
             {{ post.title }}
           </a>
         </h3>
 
-        <p v-if="post.description" class="text-sm secondary-text">
+        <p v-if="post.description" class="text-sm text-brand-2">
           {{ truncateDesc(post.description) }}
         </p>
       </div>
