@@ -28,7 +28,7 @@ This will load the route specific files only when the route is visited and it do
 
 ### React
 
-React router also supports code-splitting but the bare **lazy imports** don't work properly in vite/rollup. From my time with lazy loading components in React with vite, you have to warp **Lazy imports** inside a **React.lazy()** to get it working. e.g.
+React router also supports code-splitting but the bare **lazy imports** don't work properly in vite/rollup. From my time with lazy loading components in React with vite, you have to wrap **Lazy imports** inside a **React.lazy()** to get it working. e.g.
 
  ```js
  const Template = React.lazy(() => import('./pages/Template'));
