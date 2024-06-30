@@ -1,45 +1,47 @@
 backend:
   name: git-gateway
   branch: master
+  squash_merges: true
+
 # when using the default proxy server port
 local_backend: true
 publish_mode: editorial_workflow
-media_folder: 'content/public'
-public_folder: '/'
+media_folder: "content/public"
+public_folder: "/"
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'content/blog'
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
     create: true
-    slug: '{{slug}}'
-    sort: 'date:desc'
+    slug: "{{slug}}"
+    sort: "date:desc"
     fields:
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: "Title", name: "title", widget: "string", required: true }
       - {
           label: Description,
           name: description,
           widget: text,
           required: true,
-          pattern: ['.{0,100}', 'Must be within 0 and 100 characters'],
+          pattern: [".{0,100}", "Must be within 0 and 100 characters"],
         }
-      - label: 'Author'
-        name: 'author'
-        widget: 'object'
+      - label: "Author"
+        name: "author"
+        widget: "object"
         required: true
         fields:
-          - { label: 'Name', name: 'name', widget: 'string', required: true }
+          - { label: "Name", name: "name", widget: "string", required: true }
           - {
-              label: 'Github',
-              name: 'github',
-              widget: 'string',
+              label: "Github",
+              name: "github",
+              widget: "string",
               required: true,
             }
       - {
-          label: 'Created Date',
-          name: 'date',
-          widget: 'date',
+          label: "Created Date",
+          name: "date",
+          widget: "date",
           required: true,
-          format: 'YYYY-MM-DD',
+          format: "YYYY-MM-DD",
         }
-      - { label: 'Banner', name: 'banner', widget: 'image', required: false }
-      - { label: 'Body', name: 'body', widget: 'markdown', required: true }
+      - { label: "Banner", name: "banner", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: true }

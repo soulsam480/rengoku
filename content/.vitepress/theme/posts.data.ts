@@ -1,5 +1,6 @@
 import { createContentLoader } from "vitepress";
 import { Post } from "./types";
+import { formatDate } from "./utils";
 
 declare const data: Post[];
 
@@ -9,6 +10,7 @@ export default createContentLoader("blog/!(index)*.md", {
   excerpt: true,
   transform(raw): Post[] {
     return raw
+      .filter((it) => !it.frontmatter.hidden)
       .map(({ url, frontmatter, excerpt }) => ({
         title: frontmatter.title,
         href: url,
@@ -21,20 +23,3 @@ export default createContentLoader("blog/!(index)*.md", {
       .sort((a, b) => (b.date.time > a.date.time ? 1 : -1));
   },
 });
-
-function formatDate(date: string | Date) {
-  if (!(date instanceof Date)) {
-    date = new Date(date);
-  }
-
-  date.setUTCHours(12);
-
-  return {
-    time: date,
-    string: date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    }),
-  };
-}

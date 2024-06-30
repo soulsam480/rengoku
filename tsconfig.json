@@ -6,7 +6,10 @@
     "jsx": "preserve",
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
-    "noEmit": true
+    "noEmit": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": false
   },
-  "include": ["./content/.vitepress/**/*"]
+  "include": ["./content/.vitepress/**/*"],
+  "exclude": ["./content/.vitepress/cache/*"]
 }

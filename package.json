@@ -7,21 +7,22 @@
   "scripts": {
     "dev": "vitepress dev content",
     "build": "vitepress build content",
-    "serve": "vitepress serve content --port 5012"
+    "serve": "vitepress serve content --port 5012",
+    "lint": "vue-tsc --noEmit"
   },
   "type": "module",
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.12",
-    "@types/node": "^20.12.2",
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/node": "^20.14.9",
     "autoprefixer": "^10.4.19",
     "gray-matter": "^4.0.3",
-    "postcss": "^8.4.38",
-    "sass": "^1.72.0",
-    "tailwindcss": "^3.4.3",
-    "terser": "^5.30.1",
-    "typescript": "^4.8.3",
-    "vitepress": "1.0.2",
-    "vue": "^3.4.21"
+    "postcss": "^8.4.39",
+    "sass": "^1.77.6",
+    "tailwindcss": "^3.4.4",
+    "terser": "^5.31.1",
+    "typescript": "^5.5.2",
+    "vitepress": "^1.2.3",
+    "vue": "^3.4.31"
   },
   "engines": {
     "node": ">=12.0.0"

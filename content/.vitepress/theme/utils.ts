@@ -1,17 +1,19 @@
-export function formatDate(date: any | string): {
-  time: string;
+export function formatDate(date: Date | string): {
+  time: Date;
   string: string;
 } {
   if (!(date instanceof Date)) {
     date = new Date(date);
   }
+
   date.setUTCHours(12);
+
   return {
     time: date,
-    string: date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
+    string: date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     }),
   };
 }
