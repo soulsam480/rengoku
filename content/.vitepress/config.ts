@@ -9,10 +9,16 @@ export default defineConfig({
         //
       },
     },
-
     linkify: true,
     typographer: true,
     toc: { level: [1, 2, 3] },
+    codeTransformers: [
+      {
+        pre(el) {
+          this.addClassToHast(el, "not-prose");
+        },
+      },
+    ],
     theme: {
       light: "vitesse-light",
       dark: "vitesse-dark",
