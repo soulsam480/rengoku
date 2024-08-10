@@ -7,6 +7,7 @@ description: I'm building https://github.com/soulsam480/byoga and needed a
 author:
   name: soulsam480
   github: soulsam480
+date: 2024-08-05
 ---
 Took me little time to read and understand the codebase, but it's pretty simple as the API docs says [here](https://shelacek.bitbucket.io/plotery/#/extensions-and-plugins). The plan is to write a custom `BarLine` component that extends all library features and then the horizontal features enabled via prop.
 
