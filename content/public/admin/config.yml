@@ -39,7 +39,7 @@ collections:
       - {
           label: "Created Date",
           name: "date",
-          widget: "date",
+          widget: "datetime",
           required: true,
           format: "YYYY-MM-DD",
         }

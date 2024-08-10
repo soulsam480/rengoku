@@ -12,17 +12,17 @@
   },
   "type": "module",
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.13",
-    "@types/node": "^20.14.9",
-    "autoprefixer": "^10.4.19",
+    "@tailwindcss/typography": "^0.5.14",
+    "@types/node": "^22.2.0",
+    "autoprefixer": "^10.4.20",
     "gray-matter": "^4.0.3",
-    "postcss": "^8.4.39",
-    "sass": "^1.77.6",
-    "tailwindcss": "^3.4.4",
-    "terser": "^5.31.1",
-    "typescript": "^5.5.2",
-    "vitepress": "^1.2.3",
-    "vue": "^3.4.31"
+    "postcss": "^8.4.41",
+    "sass": "^1.77.8",
+    "tailwindcss": "^3.4.9",
+    "terser": "^5.31.5",
+    "typescript": "^5.5.4",
+    "vitepress": "^1.3.2",
+    "vue": "^3.4.37"
   },
   "engines": {
     "node": ">=12.0.0"
