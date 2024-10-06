@@ -1,5 +1,5 @@
 ---
-title: I'm 25 and it's a drag
+title: I turned 25 and it's a drag
 description: rant + refelction on turning 25
 author:
   name: soulsam480
