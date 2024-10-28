@@ -1,7 +1,7 @@
 ---
 title: Underachievement and hard work
-description: ideas on how hard work doesn't necessarrily translate to sizeable
-  achievement in this age of software and software engineers.
+description: thoughts on how hard work doesn't necessarrily translate to
+  sizeable achievement in this age of software and software engineers.
 author:
   name: soulsam480
   github: soulsam480
