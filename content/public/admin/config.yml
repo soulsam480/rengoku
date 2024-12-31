@@ -24,18 +24,6 @@ collections:
           required: true,
           pattern: [".{0,100}", "Must be within 0 and 100 characters"],
         }
-      - label: "Author"
-        name: "author"
-        widget: "object"
-        required: true
-        fields:
-          - { label: "Name", name: "name", widget: "string", required: true }
-          - {
-              label: "Github",
-              name: "github",
-              widget: "string",
-              required: true,
-            }
       - {
           label: "Created Date",
           name: "date",
