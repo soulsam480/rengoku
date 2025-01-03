@@ -6,6 +6,7 @@ author:
   github: soulsam480
 date: 2024-12-31
 banner: /dsc_4973.jpg
+banner_title: Me with Sunny near Dhanuskodi!
 ---
 I rode about 100 km on the last day of this year, heading towards Chikka Tirupathi. The roads were dusty and crowded, but it felt nice. I wanted to spend the last day doing everything I enjoy—some coding, a ride, and lots of sleep. This is my fourth year reflecting on a piece from the past year. It feels like a chore now, but it keeps me grounded and honest.
 
