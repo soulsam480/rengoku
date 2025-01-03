@@ -14,6 +14,7 @@ collections:
     folder: "content/blog"
     create: true
     slug: "{{slug}}"
+    preview_path: /blog/{{slug}} 
     sort: "date:desc"
     fields:
       - { label: "Title", name: "title", widget: "string", required: true }
@@ -32,4 +33,5 @@ collections:
           format: "YYYY-MM-DD",
         }
       - { label: "Banner", name: "banner", widget: "image", required: false }
+      - { label: "Banner title", name: "banner_title", widget: "text", required: false }
       - { label: "Body", name: "body", widget: "markdown", required: true }
