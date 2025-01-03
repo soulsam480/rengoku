@@ -15,7 +15,7 @@ The year began with a couple of personal issues. I was dealing with them and cou
 
 I learned how to ride a bike last year, and since then, I've done a bunch of road trips with Shivanna. Neither of us owned a bike initially, so we did most trips on borrowed ones. After he got his bike, I figured it was time for me to get mine too. Finally, I went ahead and bought a Suzuki V-Strom 250SX. I'd been eyeing this bike for quite a while, and I’m glad it’s finally mine. Japanese bikes rock 🚲 🗾.
 
-![BMTC KIA Bus](/pxl_20240609_075555985.jpg)
+![Beautiful roads in Western Ghats](/pxl_20240609_075555985.jpg)
 
 We did a ride through the Western Ghats to Udupi. The roads through the ghats were surreal—I can’t even describe how stunning they were. Everyone should experience riding through the Western Ghats at least once. You can check out our trail [here](https://github.com/soulsam480/rengoku/discussions/14#discussioncomment-11608348).
 
@@ -27,7 +27,7 @@ The next few months were mostly busy with work. We were working on several new p
 
 We also did an unplanned trip through Tamil Nadu, visiting several big temples. Unlike the winding roads of the Western Ghats, the highways in Tamil Nadu were mostly empty and smooth. Honestly, Tamil Nadu has the best roads in India. We cruised at 100-110 km/h for most of the trip. Seeing the beautiful temples of Tamil Nadu was a dream come true. We almost made it to the southern tip of India at Dhanuskodi. [Here’s](https://github.com/soulsam480/rengoku/discussions/14#discussioncomment-11607894) how the ride went.
 
-![BMTC KIA Bus](/pxl_20240929_143044729.jpg)
+![Food at Dhanuskodi](/pxl_20240929_143044729.jpg)
 
 That’s about it. The rest of the year was mostly work, with a few short rides thrown in. Here are some lessons I picked up along the way:
 
