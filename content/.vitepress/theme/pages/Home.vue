@@ -54,8 +54,7 @@ const SOCIAL_LINKS = [
       <div class="text-base lowercase">
         this is sambit. Been working at
         <a target="_blank" href="https://revenuehero.io" class="link"
-          >RevenueHero</a
-        >
+        >RevenueHero</a>
         since the last two years. It's been a journey full of learning and fun.
         I rarely write on
         <a href="/blog/index.html" class="link">my blog</a>. Thanks for
@@ -73,9 +72,8 @@ const SOCIAL_LINKS = [
           :key="work.name"
         >
           <h3 class="text-base">
-            <a target="_blank" :href="work.link" class="link">{{
-              work.name
-            }}</a>
+            <a target="_blank" :href="work.link" class="link">{{ work.name }}</a
+            >
           </h3>
 
           <h4 class="text-sm max-w-[90%] text-brand-1">
@@ -100,8 +98,7 @@ const SOCIAL_LINKS = [
           rel="noopener"
           target="_blank"
           href="https://github.com/soulsam480"
-          >github profile</a
-        >
+        >github profile</a>
       </div>
 
       <div class="flex flex-wrap items-center gap-2">
@@ -110,8 +107,7 @@ const SOCIAL_LINKS = [
           v-for="social in SOCIAL_LINKS"
           class="text-sm sm:text-base link"
           :href="social.link"
-          >{{ social.label }}</a
-        >
+        >{{ social.label }}</a>
       </div>
     </div>
 

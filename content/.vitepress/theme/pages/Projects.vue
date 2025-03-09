@@ -20,7 +20,7 @@ const MY_GITHUB = "https://github.com/soulsam480";
 
           <template v-for="link in project.links" :key="link.url">
             <a
-              v-if="link.label !== 'github'"
+              v-if='link.label !== "github"'
               :href="link.url"
               target="_blank"
               class="link text-sm"
@@ -30,14 +30,14 @@ const MY_GITHUB = "https://github.com/soulsam480";
 
             <a
               v-else
-              :href="
-                link.url.includes('github.com')
-                  ? link.url
-                  : MY_GITHUB + link.url
-              "
+              :href='
+                link.url.includes("github.com")
+                ? link.url
+                : MY_GITHUB + link.url
+              '
               target="_blank"
               class="link text-sm"
-              >{{ link.label }}
+            >{{ link.label }}
             </a>
           </template>
         </div>
@@ -56,7 +56,7 @@ const MY_GITHUB = "https://github.com/soulsam480";
       target="_blank"
       class="mt-4 link max-w-max"
       href="https://github.com/soulsam480?tab=repositories&type=source"
-      >Explore more projects on github
+    >Explore more projects on github
     </a>
   </div>
 </template>

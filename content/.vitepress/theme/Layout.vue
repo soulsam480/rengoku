@@ -35,11 +35,11 @@ const is_not_found = computed(() => route.component === NotFound);
     </div>
 
     <main class="max-w-3xl px-4 mx-auto mt-3 sm:px-6 xl:max-w-5xl xl:px-0">
-      <ArticleListing v-if="page_is === '/blog/'" />
+      <ArticleListing v-if='page_is === "/blog/"' />
 
       <Article v-else-if="page_is.match(/\/blog\/(.*?).html/)" />
 
-      <Home v-else-if="page_is === '/'" />
+      <Home v-else-if='page_is === "/"' />
 
       <not-found v-else-if="is_not_found" />
 
