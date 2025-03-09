@@ -3,104 +3,109 @@
 @tailwind utilities;
 
 p img {
-    margin: 0px auto;
+  margin: 0px auto;
+}
+
+img {
+  @apply rounded-md outline outline-offset-4;
+  outline-color: var(--vp-c-text-2);
 }
 
 .prose hr {
-    border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #e5e7eb;
 }
 
 @layer utilities {
-    .link {
-        color: var(--vp-c-text-1);
-        border-color: var(--vp-c-text-1);
-        @apply transition-all duration-200 ease-in-out border-b font-semibold  hover:border-b-[2px];
-    }
+  .link {
+    color: var(--vp-c-text-1);
+    border-color: var(--vp-c-text-1);
+    @apply transition-all duration-200 ease-in-out border-b font-semibold hover:border-b-[2px];
+  }
 
-    .text-brand-1 {
-        color: var(--vp-c-text-1);
-    }
+  .text-brand-1 {
+    color: var(--vp-c-text-1);
+  }
 
-    .text-brand-2 {
-        color: var(--vp-c-text-2);
-    }
+  .text-brand-2 {
+    color: var(--vp-c-text-2);
+  }
 
-    .text-brand-3 {
-        color: var(--vp-c-text-3);
-    }
+  .text-brand-3 {
+    color: var(--vp-c-text-3);
+  }
 }
 
 .prose {
+  code {
+    &::before {
+      content: "";
+    }
+
+    &::after {
+      content: "";
+    }
+  }
+
+  div[class*="language"] {
+    border-radius: 8px;
+    position: relative;
+    background-color: var(--vp-code-block-bg);
+    overflow-x: auto;
+    transition: background-color 0.5s;
+
+    pre,
     code {
-        &::before {
-            content: "";
-        }
-
-        &::after {
-            content: "";
-        }
+      direction: ltr;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      word-wrap: normal;
+      -moz-tab-size: 4;
+      -o-tab-size: 4;
+      tab-size: 4;
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
     }
 
-    div[class*="language"] {
-        border-radius: 8px;
-        position: relative;
-        background-color: var(--vp-code-block-bg);
-        overflow-x: auto;
-        transition: background-color 0.5s;
-
-        pre,
-        code {
-            direction: ltr;
-            text-align: left;
-            white-space: pre;
-            word-spacing: normal;
-            word-break: normal;
-            word-wrap: normal;
-            -moz-tab-size: 4;
-            -o-tab-size: 4;
-            tab-size: 4;
-            -webkit-hyphens: none;
-            -moz-hyphens: none;
-            -ms-hyphens: none;
-            hyphens: none;
-        }
-
-        pre {
-            position: relative;
-            z-index: 1;
-            margin: 0;
-            background: transparent;
-            overflow-x: auto;
-            padding-bottom: 16px;
-        }
-
-        code {
-            display: block;
-            padding: 0 24px;
-            width: fit-content;
-            min-width: 100%;
-            line-height: var(--vp-code-line-height);
-            font-size: var(--vp-code-font-size);
-            color: var(--vp-code-block-color);
-            transition: color 0.5s;
-        }
-
-        > span.lang {
-            position: absolute;
-            top: 2px;
-            right: 8px;
-            z-index: 2;
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--vp-code-lang-color);
-            transition:
-                color 0.4s,
-                opacity 0.4s;
-        }
+    pre {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      background: transparent;
+      overflow-x: auto;
+      padding-bottom: 16px;
     }
 
-    div[class*="language"] ~ div[class*="language"] {
-        margin-top: 1.25em;
-        margin-bottom: 1.25em;
+    code {
+      display: block;
+      padding: 0 24px;
+      width: fit-content;
+      min-width: 100%;
+      line-height: var(--vp-code-line-height);
+      font-size: var(--vp-code-font-size);
+      color: var(--vp-code-block-color);
+      transition: color 0.5s;
     }
+
+    >span.lang {
+      position: absolute;
+      top: 2px;
+      right: 8px;
+      z-index: 2;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--vp-code-lang-color);
+      transition:
+        color 0.4s,
+        opacity 0.4s;
+    }
+  }
+
+  div[class*="language"]~div[class*="language"] {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
 }
