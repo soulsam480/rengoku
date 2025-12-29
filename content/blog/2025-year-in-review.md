@@ -7,7 +7,7 @@ banner_title: Only JIO
 ---
 O LA LA LEO, O LA LA LA ULEO. 100% not the intro I wanted, but here we go again for the fifth time. Welcome to my yearly brain dump. As always, TLDR; “**generic**“ year with plenty of internal conflicts, busy with all kinds of stuff at work, struggled with keeping up with self and people around me, realization of mediocrity and lack of growth, **REALIZATION** of parents’ affection as an adult, living old days with homies, and that’s it I guess. Too much for a TLDR; eh?
 
-One thing I’d say for sure is, I’ve been looking forward to writing this for a while now. That’s actually weird and surprising. I’d be honest, as I’m writing this, I’m in a much better mental space than the majority of this year. Which is kind of a good thing, and I’m happy that I’ve improved at handling adult life and grateful to people around me for their patience.
+One thing I’d say for sure is, I’ve been looking forward to writing this for a while now. That’s actually weird and surprising. I’d be honest, as I’m writing this, I’m in a much better mental space than the majority of this year. Which is kind of a good thing, and I’m happy that I’ve improved at handling adult life and grateful to people around me for their patience. This one is going to be super long, brace for impact!!
 
 Similar to the last few years, we started off with a few ambitious assignments at work. Needless to say, it was intense in all good things. A new approach towards collaboration. It went well and somehow fell apart in a few weeks. Looking back, I’d say we’re learning and have made very good progress since. Unfortunately, it got dragged for too long. Well, it’s done, we learned a lot and ended up shipping it in a few more weeks.
 
