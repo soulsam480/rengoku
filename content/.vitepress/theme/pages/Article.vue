@@ -28,7 +28,7 @@ function onLoad() {
     }
 
     el.height = `${el?.contentWindow?.document.body?.clientHeight || 150}px`;
-  }, 1000);
+  }, 2000);
 }
 </script>
 <template>

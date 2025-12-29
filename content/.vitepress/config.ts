@@ -34,4 +34,57 @@ export default defineConfig({
 			minify: "esbuild",
 		},
 	},
+	transformHead({ pageData }) {
+		if (!pageData.relativePath.startsWith("blog")) {
+			return;
+		}
+
+		const url = `https://sambitsahoo.com/${pageData.relativePath.replace(
+			/\.md$/,
+			"",
+		)}`;
+
+		const headConfig = [];
+
+		headConfig.push(
+			[
+				"meta",
+				{
+					property: "og:title",
+					content:
+						pageData.frontmatter.title ||
+						pageData.title,
+				},
+			],
+			[
+				"meta",
+				{
+					property: "og:description",
+					content:
+						pageData.frontmatter
+							.description ||
+						pageData.description,
+				},
+			],
+			[
+				"meta",
+				{
+					property: "og:url",
+					content: url,
+				},
+			],
+		);
+
+		if (pageData.frontmatter.banner) {
+			headConfig.push([
+				"meta",
+				{
+					property: "og:image",
+					content: `https://sambitsahoo.com${pageData.frontmatter.banner}`,
+				},
+			]);
+		}
+
+		return headConfig;
+	},
 });
