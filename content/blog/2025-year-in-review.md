@@ -39,7 +39,7 @@ We did another rainy ride which triggered my PTSD from the Udupi trip. We visite
 
 Acceptance is another thing I learned this year. I kept looking back and realized most things would be better off if I just accept people and situations as they are. It’s completely fine for something to exist and not be pleasing to my liking. In the end, we should be living in a world full of real people, not reflections and façades. Accept everything and move on.
 
-![People inside a frame in front of a stone chariot](/2025-3.webp "Perception")
+![People inside a frame in front of a stone chariot](/2025-3.webp "Perception (Thanks DD)")
 
 “Stupid“ and “Stale“ is what I’d grade my growth this year. I know it doesn’t make any sense, but hear me out. Compared to last year, I mostly got stuck (not in a negative way) with things I’m comfortable with. I did a bit of Rails and a little bit of complicated frontend work, but nothing extremely challenging. What felt challenging was thinking product. I genuinely feel concerned about my abilities as a product builder. I couldn’t figure out basic interactions and approaches. There’s just so much room for improvement in every department, it honestly scares the hell out of me. Attention to detail specifically went for a toss, which is shameful, and I’m actively trying to get better at this. 2026 would be all about growth, and it’s a challenge to myself.
 
