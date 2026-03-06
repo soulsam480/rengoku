@@ -1,6 +1,6 @@
 ---
 title: It doesn't matter
-description: Reflections on why software engineering is not a sport.
+description: Reflections on why software engineering's comparison to sport is absurd.
 date: 2026-03-06
 ---
 I've recently discovered Alysa Liu, she's a figure skateboarding champion. She won Olympics this year after a two year hiatus from doing what she loved. 
