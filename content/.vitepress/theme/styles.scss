@@ -98,14 +98,20 @@ img {
       font-size: 12px;
       font-weight: 500;
       color: var(--vp-code-lang-color);
-      transition:
-        color 0.4s,
-        opacity 0.4s;
+      transition: color 0.4s, opacity 0.4s;
     }
   }
 
   div[class*="language"]~div[class*="language"] {
     margin-top: 1.25em;
     margin-bottom: 1.25em;
+  }
+
+  figure figcaption {
+    @apply text-brand-2 text-center text-sm italic mt-4;
+  }
+
+  figure {
+    margin: 1em 0em 1em 0em;
   }
 }

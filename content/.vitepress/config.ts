@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import markdownItImageFigures from "markdown-it-image-figures";
 
 export default defineConfig({
 	appearance: "force-dark",
@@ -22,6 +23,12 @@ export default defineConfig({
 		theme: {
 			light: "vitesse-light",
 			dark: "vitesse-dark",
+		},
+
+		config(md) {
+			md.use(markdownItImageFigures, {
+				figcaption: true,
+			});
 		},
 	},
 	title: "Sambit Sahoo",
